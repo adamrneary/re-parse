@@ -1,0 +1,4618 @@
+
+
+
+
+
+
+<html>
+<head>
+<Script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-32597521-1']);
+_gaq.push(['_setDomainName', 'gsmls.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+var br_type = navigator.userAgent;
+</Script>
+   <link rel="stylesheet" href="/public/common/styles/rep_styles.css?ver=1.6">
+   <link rel="stylesheet" href="/public/common/styles/public.css">
+<title>Garden State MLS</title>
+
+</head>
+<form name="languageForm" method="post" action="/public/show_public_report_rpt.do" target="WORKAREA">
+
+<body bgcolor="#003366" onload="selectcheckbox();">
+
+
+
+
+
+
+
+			 
+
+	
+		
+			<table width="98%" bgcolor="#FFFFFF"  cellspacing="0" cellpadding="0" border="0" height="60" id="banner">
+				<tbody>
+					
+						
+						
+						
+						<tr>
+							<td colspan="1" width="10px" height="10px"  bgcolor="#003366"><img src="images/mainbox_ltc.gif " height="10" width="10" border="0" style="display:block" alt=""></td>
+							<td colspan="2" height="10px" bgcolor="#FFFFFF"><img src="images/mainbox_m.gif" height="10"  border="0" style="display:block" alt=""></td>
+							<td colspan="1" width="10px" height="10px" bgcolor="#003366"><img src="images/mainbox_rtc.gif" height="10" width="10" border="0" style="display:block" alt=""></td>
+							
+						</tr>
+							<tr>
+									<td colspan="1" bgcolor="#FFFFF"  width="10" >
+									</td>
+									
+									<td colspan="1" bgcolor="#FFFFFF" class="agent" >
+										
+										
+								
+										<font><b></b><br></font>
+									
+									</td>
+									
+									<td colspan="1"  bgcolor="#FFFFFF"  align="right" class="office">
+									
+										
+											<img src="http://img.gsmls.com/logo/98169_1.jpg?date=Sun Oct 13 15:40:40 EDT 2013" alt="office logo" />
+										
+									
+										<font><span style="font-family: Arial"><span><span style="font-size: 9pt"><span><b>COLDWELL BANKER REALTORS</b><br />
+242 BELLEVUE&nbsp;AVENUE<br />
+UPPER MONTCLAIR, NJ 07043<br />
+973-233-2300 (Office) <br />
+862-345-3635 (Fax)</span></span></span></span></font>
+								
+									</td>
+								
+									<td colspan="1" width="10"  bgcolor="#ffffff">
+			
+									</td>
+							</tr>
+						
+					
+					<tr>
+							<td colspan="1" width="10px" height="10px"  bgcolor="#003366"><img src="images/mainbox_lbc.gif " height="10" width="10" border="0" style="display:block" alt=""></td>
+							<td colspan="2" height="10px" bgcolor="#FFFFFF"><img src="images/mainbox_m.gif" height="10" border="0" style="display:block" alt=""></td>
+							<td colspan="1" width="10px" height="10px" bgcolor="#003366"><img src="images/mainbox_rbc.gif" height="10" width="10" border="0" style="display:block" alt=""></td>
+
+					</tr>
+					
+					
+				</tbody>
+			</table> 
+
+
+	<table class="container" cellpadding="0" cellspacing="0" border="0" >
+		<tr>
+			<td class="ht10 wd10" ><img src="http://img.gsmls.com/imagedb/newsletter/mainbox_ltc.gif"></td>
+			<td class="ht10 banner" ><img src="http://img.gsmls.com/imagedb/newsletter/mainbox_m.gif"></td>
+			<td class="ht10 wd10 txtright"><img src="http://img.gsmls.com/imagedb/newsletter/mainbox_rtc.gif"></td>
+		</tr>
+	</table>
+			<!-- rounded corners between banner and report -->
+
+ <!--banner already includes table of 98%-->
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/common/styles/public.css">
+
+<script language="JavaScript" src="/public/common/javascript/ajax.js" type="text/javascript"></script>
+<script language="JavaScript" src="/public/common/javascript/common_function.js" type="text/javascript"></script>
+<script>
+var rptname='clientfull';
+function showcontent(){
+		var browser=navigator.appName;
+	try{ 
+		if(browser == 'Netscape'){
+			var menuObj= document.getElementById('menuheader')
+			menuObj.style.display="none";
+			window.print();
+			setTimeout("enablemenu()",3000);
+	}else{
+		reportText= document.getElementById('reportcontent').innerHTML;
+		//alert(reportText);
+		objFrame = window.frames['printfrm'];
+		var repobj = objFrame.document.getElementById('reportcontent');
+		//repobj.style.zoom = '95%';
+		//repobj.style.width = '95%';
+		repobj.innerHTML=reportText;
+		objFrame.focus();
+		objFrame.print();
+	}
+	}catch(err){
+		
+}
+}
+function printmap(){
+	
+	var Id = document.all("languageForm").Id.value;
+	document.all("languageForm").method = "post";
+	document.all("languageForm").action="/public/show_public_report_rpt.do?method=processPrint&Id="+Id;
+	document.all("languageForm").target="printfrm";
+	document.all("languageForm").submit();
+	
+}
+
+function enablemenu(){
+var menuObj= document.getElementById('menuheader')
+menuObj.style.display="block";
+}
+
+function hidemap(){
+	var fr = document.getElementById ("frDocViewer");
+	fr.style.display="none";
+var obj = document.getElementById ("pagebrk");
+obj.innerHTML = "";
+printmap();
+
+}
+
+function printwithmap(){
+	var fr = document.getElementById ("frDocViewer");
+	if(fr.style.display=="none") {
+	   fr.style.display="block";
+	}
+	var obj = document.getElementById ("pagebrk");
+	if(obj.innerHTML == ""){
+		obj.innerHTML = "<p style='page-break-before: always'></p>";
+	}
+	printmap();
+}
+
+function printdialog(event){	
+	var tempY=0;
+	var tempX=0;
+	var agt=navigator.userAgent.toLowerCase();
+	 //var IE = document.all?true:false
+	if(agt.indexOf("msie") != -1) { // grab the x-y pos.s if browser is IE
+		tempX = event.clientX + document.body.scrollLeft + 140;
+		tempY = event.clientY + document.body.scrollTop;
+		if (event.clientY >400)
+			tempY = tempY-200;	
+	} else {  // grab the x-y pos.s if browser is NS
+		tempX = event.pageX+300;
+		tempY = event.pageY;
+		if (event.clientY >400)
+			tempY = tempY-200;			 
+	} 
+	var divobj =document.all['pd']; 	
+	divobj.style.left=tempX +"px";
+	divobj.style.top=tempY +"px";
+	divobj.style.display='block';
+	
+
+}
+
+
+function closeprintdialog(){
+	document.getElementById('pd').style.display="none";
+}
+
+function printpage(){
+
+var browser=navigator.appName;
+
+	var isCheck = false;
+	var sel_report = document.all('languageForm').comma_seperated_report.value;
+	var report = document.all("languageForm").report.value;
+	var Id = document.all("languageForm").Id.value;
+	var ilen = null;
+	if(document.all("languageForm").selectrecord){
+		ilen = document.all("languageForm").selectrecord.length;
+	}
+	iradioLen = null;
+	if(document.all("languageForm").listing_selected){
+		iradioLen =document.all("languageForm").listing_selected.length;
+	}else{
+		isCheck = true;
+	}
+
+	lstngSysid = '';
+	
+	if(ilen == null){
+		if(document.all("languageForm").selectrecord){
+			if(document.all("languageForm").selectrecord.checked){
+				isCheck = true;
+				lstngSysid =document.all("languageForm").selectrecord.value;
+			}
+		}
+	}else{
+		for(i=0; i <ilen; i++){
+			
+			if(document.all("languageForm").selectrecord[i].checked){
+				isCheck = true;
+				if(lstngSysid ==''){
+				lstngSysid =document.all("languageForm").selectrecord[i].value;
+				}else{
+					lstngSysid =lstngSysid+","+document.all("languageForm").selectrecord[i].value;
+				}
+			}
+		}
+	}
+	//Check if reports are selected
+	iReportLen = document.all("languageForm").include_reports.length;
+	
+	reportChecked = false;
+	if(iReportLen == null){
+		
+		if(document.all("languageForm").include_reports.checked){
+			reportChecked = true;
+		}
+	}else{
+		for(i=0; i <iReportLen; i++){
+			if(document.all("languageForm").include_reports[i].checked){
+				reportChecked = true;
+			}
+		}
+	}
+	if(reportChecked == false){
+			alert("Please select Reports  for Printing.");
+			return;
+	}
+
+	
+	if(isCheck == false){
+		radioCheck = false;
+		for(i=0; i <iradioLen; i++){
+			if(i == 0){
+				if(document.all("languageForm").listing_selected[i].checked){
+					alert("Please select Listings for Printing");
+					return;
+
+				}
+			}
+			if( i == 1){
+				if( document.all("languageForm").listing_selected[i].checked){
+					radioCheck = true;
+				}
+			}
+		}
+		if(radioCheck  == false){
+			alert("Please select Listings for Printing");
+			return;
+		}
+			
+	}
+	
+	if(rptname == "MAP_reportLong"){
+		document.getElementById("bid").style.display="none";
+		document.getElementById("footerbanner").style.display="block";
+		document.getElementById("toolbar").style.display="none";
+		/* document.getElementById('donotshowid').style.display='none' */
+		closeprintdialog();
+		window.print();
+		document.getElementById("bid").style.display="block";
+		document.getElementById("footerbanner").style.display="none";
+		document.getElementById("toolbar").style.display="block";
+/* 		if(!document.forms[0].check_donotshow.checked){
+			document.getElementById('donotshowid').style.display='block'
+		}
+ */		
+	}
+	else if(rptname == "Map_Direction" ){
+		document.getElementById("bid").style.display="none";
+		document.getElementById("footerbanner").style.display="block";
+		document.getElementById("toolbar").style.display="none";
+		/* document.getElementById('donotshowid').style.display='none' */
+		closeprintdialog();
+		window.print();
+		document.getElementById("bid").style.display="block";
+		document.getElementById("footerbanner").style.display="none";
+		document.getElementById("toolbar").style.display="block";
+/* 		if(!document.forms[0].check_donotshow.checked){
+			document.getElementById('donotshowid').style.display='block'
+		}
+ */		
+	}else{
+		document.all("languageForm").method = "post";
+    	document.all("languageForm").action="/public/show_public_report_rpt.do?method=processPrint&selectrecord="+lstngSysid+"&Id="+Id;
+		document.all("languageForm").target="printfrm";
+		document.all("languageForm").submit();
+		closeprintdialog();
+	}
+}
+function selectParentRecord(){
+return ;
+}
+function selectcheckbox(){
+	
+	if(document.all('languageForm').comma_seperated_listingsysids){
+		if(document.all('languageForm').comma_seperated_listingsysids.value != ''){
+			
+			varry = document.all('languageForm').comma_seperated_listingsysids.value.split(",");
+			if(document.all("languageForm").selectrecord){
+			var ilen = document.all("languageForm").selectrecord.length;
+				if(ilen != null){
+					for(i = 0; i <varry.length; i++){
+						for(j=0;j<ilen;j++){
+							if(varry[i] == document.all("languageForm").selectrecord[j].value){
+								document.all("languageForm").selectrecord[j].checked=true;
+							}
+						}
+					}
+				}
+			}
+		}
+	if(document.all("languageForm").listing_selected){
+	iradioLen =document.all("languageForm").listing_selected.length;
+	for(i=0; i <iradioLen; i++){
+			radioObj = document.getElementById("r"+i);
+			if(document.all("languageForm").listing_selected[i].checked){
+				
+				radioObj.className="b";
+			}else{
+				radioObj.className="normal";
+			}
+	 }
+	}
+	}
+
+    var sellstngsysid = 'null';
+    if(document.all('selectrecord')){
+	var len = document.all('selectrecord').length;
+	for(i=0;i<len;i++){
+		if(document.all('selectrecord')[i].value == sellstngsysid){
+			//document.all('selectrecord')[i].focus();
+			var offsetleftvar = document.all('selectrecord')[i].offsetTop;
+			window.scroll(0,offsetleftvar);
+			break;
+		}
+	}
+    }
+}
+
+function changestyleclass(){
+	iradioLen =document.all("languageForm").listing_selected.length;
+	for(i=0; i <iradioLen; i++){
+			radioObj = document.getElementById("r"+i);
+			if(document.all("languageForm").listing_selected[i].checked){
+				
+				radioObj.className="b";
+			}else{
+				radioObj.className="normal";
+			}
+	 }
+}
+function opendirections(){
+	/* document.getElementById("donotshowid").style.display="block";
+	document.all("languageForm").check_donotshow.checked=false;
+	document.all("languageForm").donotshow.value= "off";
+	eraseCookie("DONOTSHOW") */
+}
+function nomsgclose(){
+ 
+		var obj_window = window.open('/public/common/include/close.html', '_self', 'width=650,height=525,status=no,resizable=no,top='+((screen.height-575)/2)+',left='+((screen.width-650)/2)+',dependent=yes,alwaysRaised=yes');
+		if(obj_window!= null){
+			obj_window.opener = window;
+			obj_window.focus();
+		}else{
+			this.close();
+		}
+	  
+}
+</script>
+
+
+			
+			
+
+
+
+
+
+<script>
+var br_type = navigator.userAgent;
+function reload_languages(obj){
+   		var langValue = obj.value;
+   		var report = document.all("languageForm").report.value;
+   		var Id = document.all("languageForm").Id.value;
+   		var sysid = document.all("languageForm").sysid.value;
+   		populateSelectedCheckedLstngs();
+   		document.all("languageForm").method = "post";
+		document.all("languageForm").action="/public/show_public_report_rpt.do?&method=getData&report="+report+"&Id="+Id+"&langValue="+langValue+"&sysid="+sysid+"&reportchange=true";
+		document.all("languageForm").target="_self";
+		document.all("languageForm").submit();
+}
+function selectreport(systemrpt){
+	
+		var langValue = document.all('languageForm').language.value;
+		document.all("languageForm").report.value=systemrpt;
+		var Id = document.all("languageForm").Id.value;
+		var sysid = document.all("languageForm").sysid.value;
+		populateSelectedCheckedLstngs();
+		document.all("languageForm").method = "post";
+		document.all("languageForm").action="/public/show_public_report_rpt.do?&method=getData&Id="+Id+"&langValue="+langValue+"&sysid="+sysid+"&report="+systemrpt+"&reportchange=true";
+		document.all("languageForm").target="_self";
+		document.all("languageForm").submit();
+}
+
+function populateSelectedCheckedLstngs(){
+	if(document.all("languageForm").selectrecord){
+	var ilen = document.all("languageForm").selectrecord.length;
+	
+	var lstngSysid = "";
+	if(ilen == null){
+		if(document.all("languageForm").selectrecord.checked){
+			lstngSysid =document.all("languageForm").selectrecord.value;
+		}
+	}else{
+		for(i=0; i <ilen; i++){
+			
+			if(document.all("languageForm").selectrecord[i].checked){
+				if(lstngSysid ==''){
+				lstngSysid =document.all("languageForm").selectrecord[i].value;
+				}else{
+					lstngSysid =lstngSysid+","+document.all("languageForm").selectrecord[i].value;
+				}
+			}
+		}
+	}
+	document.all("languageForm").comma_seperated_listingsysids.value=lstngSysid;
+	}
+}
+/* function createCookie(name,value,days) {
+	
+	if (days) {
+		document.forms[0].donotshow.value='on';
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+function eraseCookie(name) {
+	document.forms[0].donotshow.value='off';
+	createCookie(name,"off",-1);
+} */
+</script>
+
+	
+	<input type="hidden" name="report" value="clientfull">
+	<input type="hidden" name="membersessionId" value="emailrpt5A5BFB542D8E69BEA519B4D8D72EF843" >	
+	<input type="hidden" name="Id" value="87745315_22746" >
+	<input type="hidden" name="sysid" value="null" >
+	<input type="hidden" name="comma_seperated_report" value="CLIENTFULL">
+	<input type="hidden" name="print_page" value="">
+	<input type="hidden" name="comma_seperated_listingsysids" value="">
+	<input type="hidden" name="usersysid" value="22746">
+	<input type="hidden" name="officesysid" value="98169">
+	<input type="hidden" name="pubid" value="242300">
+	<input type="hidden" name="donotshow" value="off">
+	<input type="hidden" name="emailsite" value="Y" />
+	<table class="multiling">
+	
+	
+					
+								 
+								
+								
+	</table>					
+	
+
+
+			
+				
+
+
+
+
+	<div id="pd" style="display:none;position:absolute;top:100px;left:350px;z-index:1000">
+	<div class="printbox">
+		<div class="printbarA"><img src="images/confirmbarA.png" alt=""></div>
+		<div class="printbarB center arial12 b" ><span style="position: relative; top: 6px;">GSMLS Print Options</span></div>
+		<div class="printbarC"><img src="images/confirmbarC.png" alt=""></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="printbox">
+		<div class="printbarD">   </div>
+		<div class="printbarE">	</div>
+		<div class="printbarF">  </div>
+	</div>
+
+	<div class="printbox">
+		<div class="printbarD">   </div>
+		<div class="printbarE arial12">
+							
+									
+										<div class="col1 l">
+										<input type="radio" name="listing_selected" value="only" checked="checked" onclick="changestyleclass();" class="radio"> &nbsp;<span id="r0" class="normal">Only Selected Listings </span>
+										</div>
+									
+										<div class="col1 l">
+										<input type="radio" name="listing_selected" value="all" onclick="changestyleclass();" class="radio"> &nbsp;<span id="r1" class="normal">All Listings </span>
+										</div>
+									
+							
+					 
+		</div>
+		<div class="printbarF">  </div>
+	</div>
+	<div class="printbox">
+		<div class="printbarD">   </div>
+		<div class="printbarE">
+						<hr width="230">
+		</div>
+		<div class="printbarF">  </div>
+	</div>
+	
+	
+	
+	
+	
+
+	
+	 
+		
+				<div class="printbox">
+					<div class="printbarD">   </div>
+					<div class="printbarE arial12">
+									<input type="checkbox" name="include_reports" tabindex="18" value="clientfull">&nbsp;CLIENTFULL <br/>
+					</div>
+					<div class="printbarF">  </div>
+				</div>
+	
+	
+	<div class="printbox">
+		<div class="printbarD2">   </div>
+		<div class="printbarI center ">
+							<br>
+							<button class="w81" type="button" name="Yes" title="Yes" onclick="printpage();" > <img width="81" height="24" border="0" src="images/print.png" alt="Cancel"/>
+							</button>
+							<br>
+	 
+		</div>
+		<div class="printbarI center">
+							<br>
+							<button class="w81" type="button" name="Yes" title="Yes" onclick="closeprintdialog();" > <img width="81" height="24" border="0" src="images/CANCEL.jpg" alt="Cancel"/>
+							</button>
+							<br>
+	 
+		</div>
+		<div class="printbarF2">  </div>
+</div>
+<div class="printbox">
+	<div class="printbarH">   </div>
+	<div class="printbarG">
+	</div>
+	<div class="printbarH">  </div>
+</div>
+
+                     
+</div>
+
+			
+			
+			
+
+<script language="javascript">
+
+ function closesmediadiv()
+	{
+ 		var divobj =document.getElementById('mediaoptions'); 		 
+		divobj.style.display='none';
+	}
+
+ function openmapdiv(event,imagefilename)
+	{	
+
+		var tempY=0;
+		var tempX=0;
+		var agt=navigator.userAgent.toLowerCase();
+		 //var IE = document.all?true:false
+		if(agt.indexOf("msie") != -1) { // grab the x-y pos.s if browser is IE
+			tempX = event.clientX + document.body.scrollLeft + 140;
+			tempY = event.clientY + document.body.scrollTop;
+			if (event.clientY >400)
+				tempY = tempY-200;	
+		} else {  // grab the x-y pos.s if browser is NS
+			tempX = event.pageX+300;
+			tempY = event.pageY;
+			if (event.clientY >400)
+				tempY = tempY-200;			 
+		}
+		   
+		var path= imagefilename;
+		var imgobj=document.getElementById('primeimage');
+
+		imgobj.src=path;
+		imgobj.border='1';
+		var divobj =document.getElementById('mediaoptions'); 	
+
+		divobj.style.left=tempX +"px";
+		divobj.style.top=tempY +"px";
+
+		divobj.style.display='';
+		 
+	} 
+ 	
+</script> 
+  <div class="" id='mediaoptions' name='mediaoptions'  style="display:none;position:absolute; visibility:show; left:0px; top:0px; z-index:1000;">
+		<div id="" class=''  style="position:absolute;width:100px; height:100px">
+						<div id="primeimagediv">
+							<div   style=" position:absolute; z-index:2000;"> 	 </div>		  
+						 	<img align='right'  id="primeimage"  class="border"  border="0" src="/images/blank.gif" alt="" onclick="closesmediadiv();" />	
+						</div>
+			</div>
+</div>
+
+ 
+			
+	
+
+   
+
+
+
+
+	<table class="container">
+		<tr>
+			<td rowspan="1" valign="top">
+			<!-- End Container -->
+				<div class="sideControl" >
+					<div >
+						<div class="gradientBox title">
+							<div class="label">Tools</div>
+						</div>
+					</div>
+					
+
+
+
+
+
+
+
+
+
+				<div>
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  id="medid"  onmouseover="(document.getElementById('medid')).style.color ='black'" onmouseout="(document.getElementById('medid')).style.color ='#5a5959'">
+					
+						<a href ="/public/show_public_report_rpt.do?method=getData&sysid= 4347335&ptype=XPY&report=res_media&pubid=242300&pubid=242300&fromPublic=PUBLIC&app=public" target="aaa" style="text-decoration: none">
+						 
+						 	Media (24)&nbsp;V
+						 
+						</a>
+						</div>
+					</div>
+				</div>
+
+
+				 <div >
+				 
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div id="mpid" onmouseover="(document.getElementById('mpid')).style.color ='black'" onmouseout="(document.getElementById('mpid')).style.color ='#5a5959'">
+					<a href='/public/show_public_report_rpt.do?method=getMapSingle&pubid=242300&bundle=public.English&report=clientfull&Id=87745315_22746&mlsnum=3048696&lstngsysid=4347335&ptype=XPY&fromPublic=PUBLIC&report=clientfull&Id=87745315_22746' target="aaa" onmouseover="openmapdiv(event,'http://www.mapquestapi.com/staticmap/v3/getmap?KEY=Gmjtd%7Cluu22g01nu%2Crw%3Do5-lz250&center=40.876038,-74.164594&size=200,200&type=map&zoom=12&imagetype=png&pois=1,40.876038,-74.164594');" onmouseout="closesmediadiv();" style="text-decoration: none">
+						 
+						 	Map
+					 </a></div>
+					</div>
+				</div>	
+		
+			
+				
+			<div >
+				<div  class="select ht20 gradientBoxGray titleBarsGray cartclass"  onclick="javascript:printdialog(event);" >
+					<div class="mal5" id="prid" onmouseover="(document.getElementById('prid')).style.color ='black'" onmouseout="(document.getElementById('prid')).style.color ='#5a5959'" >
+						Print
+					</div>
+				
+				</div>
+			</div>	
+			<div >
+				<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  class="mal5" id="clsdid"  onmouseover="(document.getElementById('clsdid')).style.color ='black'" onmouseout="(document.getElementById('clsdid')).style.color ='#5a5959'" onclick="nomsgclose();">
+		
+					Close
+				</div>
+				</div>
+			</div>	
+			
+			<div >
+				<div class=" ht20 " >
+					
+				</div>
+			</div>	
+			
+ 
+			
+					
+												
+												
+			
+		
+	
+	
+	
+	</div>
+	</td> <!--  Don't delete this -->
+
+			<td rowspan="2" class="wp100 padl127" valign="top"id="4347335" name ="4347335">
+				<!-- Report Start -->
+				<div class="container2" >
+				<!-- Title Bar -->
+	
+				<div class="title gradientBox">
+					<div class="title-select chkbxshow"><input class="chkbxshow" type="checkbox" name="selectrecord" onclick="selectParentRecord()" value="4347335"></div>
+					<div class="title-label">Passaic*&nbsp;Clifton City* (2502)</div> 
+					<div class="title-addr">7206&nbsp;Ravenscroft Rd*</div>				
+					<div class="title-price">List Price: $347,900</div> 
+				</div> 
+				<!-- End Title Bar -->
+				<!-- Begin Main -->
+	
+				<table class="main-t" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td class="bv">Residential Client Full</td>
+						<td class="wd5">MLS#:</td>
+						<td class="wp20 bv">3048696</td>
+						<td class="wp5">Section:</td>
+						<td class="wp30 bv">Winthrop Ct</td>
+						<td>LP:</td>
+						<td class="bv">$347,900</td>
+															
+					</tr>
+	
+					<tr>
+							
+<span id="4347335_clientfulltitledesc">	    		    
+		    </span>
+<td id="4347335_clientfulllowresid" rowspan="15" >
+				
+				<div class="main-img">
+				<a href="javascript:show_highres_media('0','4347335_clientfull','242300','24')"> <img border="0" src='http://img.gsmls.com/imagedb/lowres/96/100845171_15.jpg' align="center" id="4347335_clientfulllowresimage" name="4347335_clientfulllowresimage"> </a>
+				</div>
+				<div class="img-nav"> 
+					<div class="img-nav-l">
+						
+						<span id="4347335_clientfullleftimage" style="display:block;">
+						<img src="images/backward.png" width="20px" alt="backward" onclick="moveleft('0','4347335_clientfull','242300','l');"/>
+						</span>
+						
+					</div>
+					<div class="img-nav-m " style="color: #000000;">
+						
+						<a href="javascript:show_highres_media('0','4347335_clientfull','242300','24')" style="color:#000000">
+						<span id="4347335_clientfulltocnt">1</span> of 24 (View  All 24)</a>
+						
+					</div>
+					<div class="img-nav-r">
+						
+						<span id="4347335_clientfullrightimage" style="display:block;">
+						<img src="images/forward.png" width="20px" alt="foward" onclick="moveright('0','4347335_clientfull','242300','r');"/>
+						</span>
+						
+					</div>
+				</div>
+				
+
+
+		<input type="hidden" name="4347335_clientfullimageurl0" id="4347335_clientfullimageurl0" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl1" id="4347335_clientfullimageurl1" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl2" id="4347335_clientfullimageurl2" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl3" id="4347335_clientfullimageurl3" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl4" id="4347335_clientfullimageurl4" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl5" id="4347335_clientfullimageurl5" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl6" id="4347335_clientfullimageurl6" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl7" id="4347335_clientfullimageurl7" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl8" id="4347335_clientfullimageurl8" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl9" id="4347335_clientfullimageurl9" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl10" id="4347335_clientfullimageurl10" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl11" id="4347335_clientfullimageurl11" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl12" id="4347335_clientfullimageurl12" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl13" id="4347335_clientfullimageurl13" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl14" id="4347335_clientfullimageurl14" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl15" id="4347335_clientfullimageurl15" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl16" id="4347335_clientfullimageurl16" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl17" id="4347335_clientfullimageurl17" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl18" id="4347335_clientfullimageurl18" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl19" id="4347335_clientfullimageurl19" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl20" id="4347335_clientfullimageurl20" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl21" id="4347335_clientfullimageurl21" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl22" id="4347335_clientfullimageurl22" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl23" id="4347335_clientfullimageurl23" value='null'>
+	  <input type="hidden" name="4347335_clientfullimageurl24" id="4347335_clientfullimageurl24" value='null'>
+	  <!---added for titledesc -->
+	  <input type="hidden" name="4347335_clientfullimagetitledesc0" id="4347335_clientfullimagetitledesc0" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc1" id="4347335_clientfullimagetitledesc1" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc2" id="4347335_clientfullimagetitledesc2" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc3" id="4347335_clientfullimagetitledesc3" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc4" id="4347335_clientfullimagetitledesc4" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc5" id="4347335_clientfullimagetitledesc5" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc6" id="4347335_clientfullimagetitledesc6" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc7" id="4347335_clientfullimagetitledesc7" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc8" id="4347335_clientfullimagetitledesc8" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc9" id="4347335_clientfullimagetitledesc9" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc10" id="4347335_clientfullimagetitledesc10" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc11" id="4347335_clientfullimagetitledesc11" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc12" id="4347335_clientfullimagetitledesc12" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc13" id="4347335_clientfullimagetitledesc13" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc14" id="4347335_clientfullimagetitledesc14" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc15" id="4347335_clientfullimagetitledesc15" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc16" id="4347335_clientfullimagetitledesc16" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc17" id="4347335_clientfullimagetitledesc17" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc18" id="4347335_clientfullimagetitledesc18" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc19" id="4347335_clientfullimagetitledesc19" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc20" id="4347335_clientfullimagetitledesc20" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc21" id="4347335_clientfullimagetitledesc21" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc22" id="4347335_clientfullimagetitledesc22" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc23" id="4347335_clientfullimagetitledesc23" value='null'>
+		<input type="hidden" name="4347335_clientfullimagetitledesc24"  id="4347335_clientfullimagetitledesc24" value='null'>
+	 	<input type="hidden" name="4347335_clientfullcurrentcnt" id="4347335_clientfullcurrentcnt" value='null'>
+	  <input type="hidden" name="4347335_clientfullimagecnt" id="4347335_clientfullimagecnt" value='null'>
+	  <input type="hidden" name="currlstng" id="currlstng" value='4347335_clientfull'> 
+	  </td>
+			
+					</tr>
+	
+					<tr>
+						<td class="wd5">Status:</td>
+						<td class="wp20 bv">Active</td>
+						<td class="wp5">ZN:</td>
+						<td class="wp30 bv"></td>
+						<td>OLP:</td>
+						<td class="bv">$364,900</td>
+					</tr>
+					<tr>
+						<td>Rms:</td>
+						<td class="bv">5</td>
+						<td>GRS:</td>
+						<td class="bv">  </td>
+						<td>SP:</td>
+						<td class="bv"></td>
+														
+					</tr>					
+					<tr>
+						<td>Bdrm:</td>
+						<td class="bv">2</td>
+						<td>MSJR:</td>
+						<td class="bv"> </td>
+						<td class="wp5">LD:</td>
+						<td class="wp20 bv">06/21/2013</td>
+														
+					</tr>
+					<tr>
+						<td>FB:</td>
+						<td class="bv">2</td>
+						<td>HS:</td>
+						<td class="bv"></td>
+						<td>UCD:</td>
+						<td class="wp20 bv"></td>														
+					</tr>
+					<tr>
+						<td>HB:</td>
+						<td class="bv">0</td>
+						<td>Acres:</td>
+						<td class="bv">*</td>
+						
+						<td>CD:</td>
+						<td class="wp20 bv"></td>
+						
+						
+																								
+					</tr>
+					<tr>
+						<td>ZIP:</td>
+						<td class="bv">07013-7612*</td>
+						<td>LtSz:</td>
+						<td class="bv">0.3704%*</td>
+						<td>ADM:</td>
+						<td class="bv">114</td>																		
+					</tr>
+					<tr>
+						<td>RZIP:</td>
+						<td class="bv">07013</td>
+						<td>SqFt:</td>
+						<td class="bv">1536</td>
+						<td>DOM:</td>
+						<td class="bv">114</td>																		
+					</tr>
+					<tr>
+						<td>Block:</td>
+						<td class="bv">28.2*</td>
+						<td>CLR:</td>
+						<td class="bv"></td>
+						<td>SDA:</td>
+						<td class="bv">Yes</td>																			
+					</tr>
+					<tr>
+						<td>Lot:</td>
+						<td class="bv">1.3*</td>
+						<td>CL:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>																				
+					</tr>
+
+					<tr>
+						<td>Unit&nbsp;#:</td>
+						<td class="bv">7206</td>
+						<td>GSMLS.com:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>												
+					</tr>
+					
+					<tr>
+						<td>Floor&nbsp;#:</td>
+						<td class="bv">2</td>
+						<td>Pets:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>											
+					</tr>
+					
+					<tr>
+						<td>Bldg&nbsp;#:</td>
+						<td class="bv">7</td>
+						<td colspan="4">YB/Desc/Ren: <b>2006&nbsp;/&nbsp;Standing&nbsp;/&nbsp;</b></td>
+					</tr>					
+					<tr>
+						<td colspan="1">FHA55+:</td>	
+						<td colspan="1" class="bv">Yes</td>	
+						<td colspan="4">PSubType: <b>CCT</b></td>	
+					</tr>
+									
+					<tr>
+						<td colspan="6">Style: <b>Hi-Rise, One Floor Unit</b></td>	
+					</tr>
+				</table>
+		
+	    		
+	    		<div class="clear"></div>
+
+				<!-- Remarks Container -->		
+				<div class="cols cols100 ">
+					<div class="col ">
+						<!-- Directions Container -->
+						
+							<div class="wp100 fieldPad l_float">
+								Directions: <b>Colfax Ave to Cambridge to Ravenscroft. For GPS 440 Colfax Avenue </b>
+							</div>
+						
+						
+						
+						<div class="clear"></div>
+						
+						<!-- Client Remarks Container -->
+						<div class="wp100 fieldPad l_float">
+							Remarks:<b>Chesterfield model with 1536 square feet of stunning luxury livening in wonderful development. Open floor plan, quality upgrades and beautifully maintained. This home seems like new.&nbsp;Country Club living at its best with a sophisticated clubhouse, amenities galore plus inground pool and tennis.  Separate storage area.</b>
+						</div>
+						
+					</div>
+				</div>
+				<!-- End Remarks Container -->	
+				<div class="clear"></div>
+
+				<!-- Interior Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>INTERIOR</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Applncs:</div>
+						<div class="bv l_float wp80 fieldPad " >CODetect, Dishwasher, Microwave Oven, Refrigerator, Range/Oven-Gas</div>
+						
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Bsmnt:</div>
+						<div class="bv l_float wp80 fieldPad ">No&nbsp;/&nbsp;</div>
+					
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">Dine:</div>
+						<div class="bv l_float wp80 fieldPad ">Living/Dining Combo</div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad phide">Exclu:</div>
+						<div class="bv l_float wp80 fieldPad phide"></div>
+					
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad ">FirePl:</div>
+						<div class="bv l_float wp80 fieldPad ">1&nbsp;/&nbsp;Gas Fireplace, Living Room</div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Floor:</div>
+						<div class="bv l_float wp80 fieldPad ">Carpeting, Ceramic Tile</div>
+					</div>
+					
+					<div class="col">
+						<div class="clear"></div>								
+						<div class="bl l_float wp99 fieldPad phide">Handicap Modified: <font class="bv"></font></div>
+						
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">IntFeat:</div>
+						<div class="bv l_float wp80 fieldPad ">Fire Alarm Sys, CODetect, FireExtg, Intercom, Walk-In Closet</div>
+					
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">Kitch:</div>
+						<div class="bv l_float wp80 fieldPad ">Eat-In Kitchen, Separate Dining Area</div>
+											
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">MastBr:</div>
+						<div class="bv l_float wp80 fieldPad ">Full Bath, Walk-In Closet</div>
+								
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">MstBath:</div>
+						<div class="bv l_float wp80 fieldPad " >Soaking Tub, Stall Shower</div>
+	
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">P-Use:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">Suite:</div>
+						<div class="bv l_float  wp80 fieldPad phide">/</div>
+							
+						
+					</div>
+				</div>
+				<!-- Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>EXTERIOR / OTHER FEATURES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Amnt:</div>
+						<div class="bv l_float  wp80 fieldPad ">Billiards Room, Club House, Elevator, Exercise Room, Playground, Pool-Outdoor, Storage</div>
+	
+							
+
+						<div class="clear"></div>			
+						<div class="bl l_float  wd55 fieldPad ">Drive:</div>
+						<div class="bv l_float  wp80 fieldPad ">&nbsp;/&nbsp;Additional Parking, Parking Lot-Exclusive</div>
+
+							
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Exterior:</div>
+						<div class="bv l_float  wp80 fieldPad ">Vinyl Siding</div>
+	
+							
+		
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">ExtFeat:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+		
+
+					</div>
+					
+					<div class="col">
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Garage:</div>
+						<div class="bv l_float  wp80 fieldPad ">1&nbsp;/&nbsp; Built-In Garage</div>
+				
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">LotDesc:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Pool:</div>
+						<div class="bv l_float  wp80 fieldPad ">Yes/Association Pool</div>
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Roof:</div>
+						<div class="bv l_float  wp80 fieldPad ">Asphalt Shingle</div>
+
+					</div>
+				</div>
+				
+				
+				<!-- End Interior Exterior Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Room Dimensions Container -->
+				<div class="cols cols100 phide">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>ROOMS</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="cols cols19 phide">
+
+					<div class="col">			
+						<div class="wd45 bl l_float fieldPad">LivRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd45 bl l_float fieldPad">DinRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Kitch:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Den:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+	
+					</div>
+	
+					<div class="col">	
+						<div class="wd50 bl l_float fieldPad">FamRm:</div>
+						<div class="wp50 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+			
+				</div>
+
+				<div class="clear"></div>
+				
+				
+				<div class="cols cols19 phide">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Bed1:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Bed2:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed3:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed4:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+				</div>
+								
+				<div class="clear"></div>		
+						
+				<div class="cols cols100 phide">
+					<div class="col">
+				
+						<div class="wp25 l_float fieldPad"><font class="bl"> :</font> <font class="bv">/</font></div>
+		
+
+						<div class="wp25 l_float fieldPad"><font class="bl"> :</font> <font class="bv">/</font></div>
+					
+					
+						<div class="wp25 l_float fieldPad"><font class="bl">: </font> <font class="bv">/</font></div>
+					
+			
+						<div class="wp24 l_float fieldPad"><font class="bl">: </font>  <font class="bv">/</font></div>
+						
+					</div>
+				</div>
+						
+				<div class="cols cols100 ">
+				
+					<div class="col ">
+						<div class="wd45 bl l_float fieldPad phide">LevelB:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">LevelG:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+	
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level1:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Level2:</div>
+						<div class="wp93 bv l_float fieldPad ">2 Bedrooms, Bath Main, Bath(s) Other, Dining Room, Living Room, Storage Room</div>
+					</div>
+				
+				</div>
+				
+				<div class="cols cols6040">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level3:</div>
+						<div class="wp83 bv l_float fieldPad phide"></div>
+					</div>
+					<div class="col1">
+						<div class="wd45 bl l_float fieldPad phide">OthLev:</div>
+						<div class="wp70 bv l_float fieldPad phide"></div>
+					</div>
+				</div>
+
+				<!-- End Room Dimensions Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Utilities Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>UTILITIES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols">
+					<div class="col">
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Heat:</div>
+						<div class="wp86 bv l_float fieldPad ">Forced Hot Air</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Cool:</div>
+						<div class="wp86 bv l_float fieldPad ">Central Air</div>
+					
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Fuel:</div>
+						<div class="wp86 bv l_float fieldPad ">Electric, Gas-Natural</div>
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad phide">Service:</div>
+						<div class="wp86 bv l_float fieldPad phide"></div>	
+
+					</div>
+					<div class="col">
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Sewer:</div>
+						<div class="wp86 bv l_float fieldPad ">Association, Public Sewer</div>
+
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Utilities:</div>
+						<div class="wp86 bv l_float fieldPad ">All Underground</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Water:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Water</div>	
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad phide">WtrHt:</div>
+						<div class="wp86 bv l_float fieldPad phide"></div>	
+
+					</div>
+				
+				</div>
+				<!-- End Utilities Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Financial Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>FINANCIAL INFORMATION / TAX INFORMATION</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols100">
+					 <div class="col">
+				
+						<div class="wd50 bl l_float fieldPad">Fee:</div>
+						<div class="wp17 bv l_float fieldPad">$335&nbsp;/&nbsp;Monthly</div>
+			
+						<div class="wd60 bl l_float fieldPad phide">FarmAsm:</div>
+						<div class="wp10 bv l_float fieldPad phide"></div>
+						
+						<div class="wd60 bl l_float fieldPad phide">HmWrnty:</div>
+						<div class="wp4  bv l_float fieldPad phide"></div>
+					
+							
+						<div class="wp8 bv r_float fieldPad">$80,000</div>
+						<div class="wd55 bl r_float fieldPad">LndAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">$8,374&nbsp;/&nbsp;2012
+						</div>
+						<div class="wd40 bl r_float fieldPad">Taxes:</div>
+						
+						<div class="clear"></div>	
+						
+						<div class="wd50 bl l_float fieldPad">AppFee:</div>
+						<div class="wp17 bv l_float fieldPad">$00</div>
+						<div class="wd60 bl l_float fieldPad">OTP:</div>
+						<div class="wp10 bv l_float fieldPad">Condominium</div>
+						
+											
+						
+						<div class="wp8 bv r_float fieldPad">$90,800</div>
+						<div class="wd55 bl r_float fieldPad">BldAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">4.903&nbsp;/&nbsp;2012</div>
+						<div class="wd40 bl r_float fieldPad">TaxRt:</div>
+												
+						<div class="clear"></div>
+						
+						<div class="wd50 bl l_float fieldPad">Other:</div>
+						<div class="wp17 bv l_float fieldPad">$&nbsp;/&nbsp;</div>				
+						<div class="wd60 bl l_float fieldPad">Easement:</div>
+						<div class="wp30 bv l_float fieldPad">Unknown&nbsp;/&nbsp;</div>
+				
+						
+						<div class="wp8 bv r_float fieldPad">$170,800</div>
+						<div class="wd55 bl r_float fieldPad">TotAsmt:</div>
+						
+						<div class="clear"></div>
+						<div class="wd50 bl l_float fieldPad">FeeIncl:</div>
+						<div class="wp70 bv l_float fieldPad">Maintenance-Common Area , Maintenance-Exterior , Snow Removal , Trash Collection , Water Fees</div>
+						
+
+					</div>
+				</div> 
+			
+				<!-- End Financial Container -->
+			</div><!-- End Report -->
+		</td>
+		
+	</tr>
+</table> <!-- End Container -->
+	
+	
+
+<table border="0" class="gsmlsfooterclass" cellspacing="0" cellpadding="0" >
+			<tr>
+				<td class="footpadleft" align="left">Copyright, Garden State MLS, L.L.C.</td>
+				<td align="center">
+				<font color="#FF0000"><i>**Info. deemed RELIABLE but not GUARANTEED - ALL Room Sizes are Approx.**</i></font></td>
+				
+					<td  class="footpadright"  align="right"><b>REGINA SHEERAN</b></td>
+				
+			</tr>
+</table>
+<div><div id="dummyspan" name="dummyspan"></div></div>
+<script>
+
+if(br_type.indexOf("MSIE 7.0") > -1){
+		
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+}else if(br_type.indexOf("MSIE 9.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 10.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<p style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 8.0") > -1){
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+	
+}else if(br_type.indexOf("Firefox") > -1){
+		
+    if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+	 
+}else if (br_type.indexOf("Opera") != -1) {
+		
+}else if (br_type.indexOf("Safari") != -1 && br_type.indexOf("Chrome") ==-1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+}else if (br_type.indexOf("konqueror") != -1) {
+		
+}else if (br_type.indexOf("Chrome") != -1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+} else {
+	
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML =  '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+}
+</script>
+<script>
+
+function searchreportforagent(selsysid){
+
+	membersessionId = document.forms[0].membersessionId.value;
+window.open("/mlsreports/runProfileReport.do?method=getAgentProfileReport&selectedPubId="+selsysid+"&membersessionId="+membersessionId);
+
+}
+</script>
+	
+	
+	
+	<table class="container">
+		<tr>
+			<td rowspan="1" valign="top">
+			<!-- End Container -->
+				<div class="sideControl" >
+					<div >
+						<div class="gradientBox title">
+							<div class="label">Tools</div>
+						</div>
+					</div>
+					
+
+
+
+
+
+
+
+
+
+				<div>
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  id="medid"  onmouseover="(document.getElementById('medid')).style.color ='black'" onmouseout="(document.getElementById('medid')).style.color ='#5a5959'">
+					
+						<a href ="/public/show_public_report_rpt.do?method=getData&sysid= 4365752&ptype=XPY&report=res_media&pubid=242300&pubid=242300&fromPublic=PUBLIC&app=public" target="aaa" style="text-decoration: none">
+						 
+						 	Media (12)&nbsp;
+						 
+						</a>
+						</div>
+					</div>
+				</div>
+
+
+				 <div >
+				 
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div id="mpid" onmouseover="(document.getElementById('mpid')).style.color ='black'" onmouseout="(document.getElementById('mpid')).style.color ='#5a5959'">
+					<a href='/public/show_public_report_rpt.do?method=getMapSingle&pubid=242300&bundle=public.English&report=clientfull&Id=87745315_22746&mlsnum=3065556&lstngsysid=4365752&ptype=XPY&fromPublic=PUBLIC&report=clientfull&Id=87745315_22746' target="aaa" onmouseover="openmapdiv(event,'http://www.mapquestapi.com/staticmap/v3/getmap?KEY=Gmjtd%7Cluu22g01nu%2Crw%3Do5-lz250&center=40.8761,-74.1647&size=200,200&type=map&zoom=12&imagetype=png&pois=1,40.8761,-74.1647');" onmouseout="closesmediadiv();" style="text-decoration: none">
+						 
+						 	Map
+					 </a></div>
+					</div>
+				</div>	
+		
+			
+				
+			<div >
+				<div  class="select ht20 gradientBoxGray titleBarsGray cartclass"  onclick="javascript:printdialog(event);" >
+					<div class="mal5" id="prid" onmouseover="(document.getElementById('prid')).style.color ='black'" onmouseout="(document.getElementById('prid')).style.color ='#5a5959'" >
+						Print
+					</div>
+				
+				</div>
+			</div>	
+			<div >
+				<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  class="mal5" id="clsdid"  onmouseover="(document.getElementById('clsdid')).style.color ='black'" onmouseout="(document.getElementById('clsdid')).style.color ='#5a5959'" onclick="nomsgclose();">
+		
+					Close
+				</div>
+				</div>
+			</div>	
+			
+			<div >
+				<div class=" ht20 " >
+					
+				</div>
+			</div>	
+			
+ 
+			
+					
+												
+												
+			
+		
+	
+	
+	
+	</div>
+	</td> <!--  Don't delete this -->
+
+			<td rowspan="2" class="wp100 padl127" valign="top"id="4365752" name ="4365752">
+				<!-- Report Start -->
+				<div class="container2" >
+				<!-- Title Bar -->
+	
+				<div class="title gradientBox">
+					<div class="title-select chkbxshow"><input class="chkbxshow" type="checkbox" name="selectrecord" onclick="selectParentRecord()" value="4365752"></div>
+					<div class="title-label">Passaic&nbsp;Clifton City (2502)</div> 
+					<div class="title-addr">5108&nbsp;BURWOOD RD*</div>				
+					<div class="title-price">List Price: $371,900</div> 
+				</div> 
+				<!-- End Title Bar -->
+				<!-- Begin Main -->
+	
+				<table class="main-t" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td class="bv">Residential Client Full</td>
+						<td class="wd5">MLS#:</td>
+						<td class="wp20 bv">3065556</td>
+						<td class="wp5">Section:</td>
+						<td class="wp30 bv">Parkwood at Cambridge Cross</td>
+						<td>LP:</td>
+						<td class="bv">$371,900</td>
+															
+					</tr>
+	
+					<tr>
+							
+<span id="4365752_clientfulltitledesc">	    		    
+		    </span>
+<td id="4365752_clientfulllowresid" rowspan="15" >
+				
+				<div class="main-img">
+				<a href="javascript:show_highres_media('0','4365752_clientfull','242300','12')"> <img border="0" src='http://img.gsmls.com/imagedb/lowres/56/100893909_0.jpg' align="center" id="4365752_clientfulllowresimage" name="4365752_clientfulllowresimage"> </a>
+				</div>
+				<div class="img-nav"> 
+					<div class="img-nav-l">
+						
+						<span id="4365752_clientfullleftimage" style="display:block;">
+						<img src="images/backward.png" width="20px" alt="backward" onclick="moveleft('0','4365752_clientfull','242300','l');"/>
+						</span>
+						
+					</div>
+					<div class="img-nav-m " style="color: #000000;">
+						
+						<a href="javascript:show_highres_media('0','4365752_clientfull','242300','12')" style="color:#000000">
+						<span id="4365752_clientfulltocnt">1</span> of 12 (View  All 12)</a>
+						
+					</div>
+					<div class="img-nav-r">
+						
+						<span id="4365752_clientfullrightimage" style="display:block;">
+						<img src="images/forward.png" width="20px" alt="foward" onclick="moveright('0','4365752_clientfull','242300','r');"/>
+						</span>
+						
+					</div>
+				</div>
+				
+
+
+		<input type="hidden" name="4365752_clientfullimageurl0" id="4365752_clientfullimageurl0" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl1" id="4365752_clientfullimageurl1" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl2" id="4365752_clientfullimageurl2" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl3" id="4365752_clientfullimageurl3" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl4" id="4365752_clientfullimageurl4" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl5" id="4365752_clientfullimageurl5" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl6" id="4365752_clientfullimageurl6" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl7" id="4365752_clientfullimageurl7" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl8" id="4365752_clientfullimageurl8" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl9" id="4365752_clientfullimageurl9" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl10" id="4365752_clientfullimageurl10" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl11" id="4365752_clientfullimageurl11" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl12" id="4365752_clientfullimageurl12" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl13" id="4365752_clientfullimageurl13" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl14" id="4365752_clientfullimageurl14" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl15" id="4365752_clientfullimageurl15" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl16" id="4365752_clientfullimageurl16" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl17" id="4365752_clientfullimageurl17" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl18" id="4365752_clientfullimageurl18" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl19" id="4365752_clientfullimageurl19" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl20" id="4365752_clientfullimageurl20" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl21" id="4365752_clientfullimageurl21" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl22" id="4365752_clientfullimageurl22" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl23" id="4365752_clientfullimageurl23" value='null'>
+	  <input type="hidden" name="4365752_clientfullimageurl24" id="4365752_clientfullimageurl24" value='null'>
+	  <!---added for titledesc -->
+	  <input type="hidden" name="4365752_clientfullimagetitledesc0" id="4365752_clientfullimagetitledesc0" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc1" id="4365752_clientfullimagetitledesc1" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc2" id="4365752_clientfullimagetitledesc2" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc3" id="4365752_clientfullimagetitledesc3" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc4" id="4365752_clientfullimagetitledesc4" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc5" id="4365752_clientfullimagetitledesc5" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc6" id="4365752_clientfullimagetitledesc6" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc7" id="4365752_clientfullimagetitledesc7" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc8" id="4365752_clientfullimagetitledesc8" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc9" id="4365752_clientfullimagetitledesc9" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc10" id="4365752_clientfullimagetitledesc10" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc11" id="4365752_clientfullimagetitledesc11" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc12" id="4365752_clientfullimagetitledesc12" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc13" id="4365752_clientfullimagetitledesc13" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc14" id="4365752_clientfullimagetitledesc14" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc15" id="4365752_clientfullimagetitledesc15" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc16" id="4365752_clientfullimagetitledesc16" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc17" id="4365752_clientfullimagetitledesc17" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc18" id="4365752_clientfullimagetitledesc18" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc19" id="4365752_clientfullimagetitledesc19" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc20" id="4365752_clientfullimagetitledesc20" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc21" id="4365752_clientfullimagetitledesc21" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc22" id="4365752_clientfullimagetitledesc22" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc23" id="4365752_clientfullimagetitledesc23" value='null'>
+		<input type="hidden" name="4365752_clientfullimagetitledesc24"  id="4365752_clientfullimagetitledesc24" value='null'>
+	 	<input type="hidden" name="4365752_clientfullcurrentcnt" id="4365752_clientfullcurrentcnt" value='null'>
+	  <input type="hidden" name="4365752_clientfullimagecnt" id="4365752_clientfullimagecnt" value='null'>
+	  <input type="hidden" name="currlstng" id="currlstng" value='4365752_clientfull'> 
+	  </td>
+			
+					</tr>
+	
+					<tr>
+						<td class="wd5">Status:</td>
+						<td class="wp20 bv">Active</td>
+						<td class="wp5">ZN:</td>
+						<td class="wp30 bv"></td>
+						<td>OLP:</td>
+						<td class="bv">$371,900</td>
+					</tr>
+					<tr>
+						<td>Rms:</td>
+						<td class="bv">5</td>
+						<td>GRS:</td>
+						<td class="bv">  </td>
+						<td>SP:</td>
+						<td class="bv"></td>
+														
+					</tr>					
+					<tr>
+						<td>Bdrm:</td>
+						<td class="bv">2</td>
+						<td>MSJR:</td>
+						<td class="bv"> </td>
+						<td class="wp5">LD:</td>
+						<td class="wp20 bv">08/12/2013</td>
+														
+					</tr>
+					<tr>
+						<td>FB:</td>
+						<td class="bv">2</td>
+						<td>HS:</td>
+						<td class="bv"></td>
+						<td>UCD:</td>
+						<td class="wp20 bv"></td>														
+					</tr>
+					<tr>
+						<td>HB:</td>
+						<td class="bv">0</td>
+						<td>Acres:</td>
+						<td class="bv">0*</td>
+						
+						<td>CD:</td>
+						<td class="wp20 bv"></td>
+						
+						
+																								
+					</tr>
+					<tr>
+						<td>ZIP:</td>
+						<td class="bv">07013-2692*</td>
+						<td>LtSz:</td>
+						<td class="bv">*</td>
+						<td>ADM:</td>
+						<td class="bv">62</td>																		
+					</tr>
+					<tr>
+						<td>RZIP:</td>
+						<td class="bv">07013</td>
+						<td>SqFt:</td>
+						<td class="bv">1488</td>
+						<td>DOM:</td>
+						<td class="bv">62</td>																		
+					</tr>
+					<tr>
+						<td>Block:</td>
+						<td class="bv">28.2*</td>
+						<td>CLR:</td>
+						<td class="bv"></td>
+						<td>SDA:</td>
+						<td class="bv">No</td>																			
+					</tr>
+					<tr>
+						<td>Lot:</td>
+						<td class="bv">1.3*</td>
+						<td>CL:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>																				
+					</tr>
+
+					<tr>
+						<td>Unit&nbsp;#:</td>
+						<td class="bv"></td>
+						<td>GSMLS.com:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>												
+					</tr>
+					
+					<tr>
+						<td>Floor&nbsp;#:</td>
+						<td class="bv"></td>
+						<td>Pets:</td>
+						<td class="bv">Restrictions</td>
+						<td></td>
+						<td class="bv"></td>											
+					</tr>
+					
+					<tr>
+						<td>Bldg&nbsp;#:</td>
+						<td class="bv"></td>
+						<td colspan="4">YB/Desc/Ren: <b>2012&nbsp;/&nbsp;Under Construction&nbsp;/&nbsp;</b></td>
+					</tr>					
+					<tr>
+						<td colspan="1">FHA55+:</td>	
+						<td colspan="1" class="bv">Yes</td>	
+						<td colspan="4">PSubType: <b>CCT</b></td>	
+					</tr>
+									
+					<tr>
+						<td colspan="6">Style: <b>One Floor Unit</b></td>	
+					</tr>
+				</table>
+		
+	    		
+	    		<div class="clear"></div>
+
+				<!-- Remarks Container -->		
+				<div class="cols cols100 ">
+					<div class="col ">
+						<!-- Directions Container -->
+						
+							<div class="wp100 fieldPad l_float">
+								Directions: <b>Colfax to Cambridge Crossing complex. Go to Parkwood Sales Center to see models.  </b>
+							</div>
+						
+						
+						
+						<div class="clear"></div>
+						
+						<!-- Client Remarks Container -->
+						<div class="wp100 fieldPad l_float">
+							Remarks:<b>Brand New Residences in Gated Active Adult Community. see full rpt. &nbsp;Elegant Parkwood community conveniently located within easy reach of Manhattan and nearby counties allows you to stay connected.Offers neighborhood conveniences, designer kitchens, lavish baths, luxurious interiors,royal club amenities, quality assurance and warranty to name a few. Also offers private terrace for outdoor enjoyment and Storage unit on same floor for easy access. Bromley model photos</b>
+						</div>
+						
+					</div>
+				</div>
+				<!-- End Remarks Container -->	
+				<div class="clear"></div>
+
+				<!-- Interior Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>INTERIOR</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Applncs:</div>
+						<div class="bv l_float wp80 fieldPad " >Dishwasher, Dryer              , Microwave Oven, Refrigerator, Range/Oven-Gas, Washer</div>
+						
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Bsmnt:</div>
+						<div class="bv l_float wp80 fieldPad ">No&nbsp;/&nbsp;</div>
+					
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">Dine:</div>
+						<div class="bv l_float wp80 fieldPad ">Living/Dining Combo</div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad phide">Exclu:</div>
+						<div class="bv l_float wp80 fieldPad phide"></div>
+					
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad ">FirePl:</div>
+						<div class="bv l_float wp80 fieldPad ">1&nbsp;/&nbsp;Gas Fireplace, Gas Ventless , Living Room</div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Floor:</div>
+						<div class="bv l_float wp80 fieldPad ">Carpeting</div>
+					</div>
+					
+					<div class="col">
+						<div class="clear"></div>								
+						<div class="bl l_float wp99 fieldPad ">Handicap Modified: <font class="bv">Yes</font></div>
+						
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">IntFeat:</div>
+						<div class="bv l_float wp80 fieldPad ">Fire Alarm Sys, CODetect, Intercom, Smoke Detector, Walk-In Closet</div>
+					
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">Kitch:</div>
+						<div class="bv l_float wp80 fieldPad ">See Remarks</div>
+											
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">MastBr:</div>
+						<div class="bv l_float wp80 fieldPad ">Full Bath, Walk-In Closet</div>
+								
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">MstBath:</div>
+						<div class="bv l_float wp80 fieldPad " >Soaking Tub, Stall Shower</div>
+	
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">P-Use:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">Suite:</div>
+						<div class="bv l_float  wp80 fieldPad phide">/</div>
+							
+						
+					</div>
+				</div>
+				<!-- Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>EXTERIOR / OTHER FEATURES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Amnt:</div>
+						<div class="bv l_float  wp80 fieldPad ">Billiards Room, Club House, Elevator, Exercise Room, Kitchen Facilities, Pool-Outdoor, Sauna, Tennis Courts</div>
+	
+							
+
+						<div class="clear"></div>			
+						<div class="bl l_float  wd55 fieldPad ">Drive:</div>
+						<div class="bv l_float  wp80 fieldPad ">1&nbsp;/&nbsp;Parking Lot-Shared</div>
+
+							
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Exterior:</div>
+						<div class="bv l_float  wp80 fieldPad ">Stone, Stucco</div>
+	
+							
+		
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">ExtFeat:</div>
+						<div class="bv l_float  wp80 fieldPad ">Underground Lawn Sprinkler, Thermal Windows/Doors</div>
+		
+
+					</div>
+					
+					<div class="col">
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Garage:</div>
+						<div class="bv l_float  wp80 fieldPad ">1&nbsp;/&nbsp; Assigned, Garage Under, Garage Parking</div>
+				
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad ">LotDesc:</div>
+						<div class="bv l_float  wp80 fieldPad ">Level Lot</div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">Pool:</div>
+						<div class="bv l_float  wp80 fieldPad phide">/</div>
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Roof:</div>
+						<div class="bv l_float  wp80 fieldPad ">Asphalt Shingle</div>
+
+					</div>
+				</div>
+				
+				
+				<!-- End Interior Exterior Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Room Dimensions Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>ROOMS</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="cols cols19 ">
+
+					<div class="col">			
+						<div class="wd45 bl l_float fieldPad">LivRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;First</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd45 bl l_float fieldPad">DinRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;First</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Kitch:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;First</div>
+
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Den:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+	
+					</div>
+	
+					<div class="col">	
+						<div class="wd50 bl l_float fieldPad">FamRm:</div>
+						<div class="wp50 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+			
+				</div>
+
+				<div class="clear"></div>
+				
+				
+				<div class="cols cols19 ">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed1:</div>
+						<div class="wp65 bv l_float fieldPad ">&nbsp;/&nbsp;First</div>
+					</div>
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed2:</div>
+						<div class="wp65 bv l_float fieldPad ">&nbsp;/&nbsp;First</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed3:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed4:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+				</div>
+								
+				<div class="clear"></div>		
+						
+				<div class="cols cols100 ">
+					<div class="col">
+				
+						<div class="wp25 l_float fieldPad"><font class="bl">Bathroom :</font> <font class="bv">/First</font></div>
+		
+
+						<div class="wp25 l_float fieldPad"><font class="bl">Bathroom :</font> <font class="bv">/First</font></div>
+					
+					
+						<div class="wp25 l_float fieldPad"><font class="bl">Laundry Room: </font> <font class="bv">/First</font></div>
+					
+			
+						<div class="wp24 l_float fieldPad"><font class="bl">Storage Room: </font>  <font class="bv">/First</font></div>
+						
+					</div>
+				</div>
+						
+				<div class="cols cols100 ">
+				
+					<div class="col ">
+						<div class="wd45 bl l_float fieldPad phide">LevelB:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">LevelG:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+	
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Level1:</div>
+						<div class="wp93 bv l_float fieldPad ">2 Bedrooms, Bath Main, Bath(s) Other, Dining Room, Kitchen, Laundry Room, Living Room, Storage Room, Utility Room</div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level2:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+				
+				</div>
+				
+				<div class="cols cols6040">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level3:</div>
+						<div class="wp83 bv l_float fieldPad phide"></div>
+					</div>
+					<div class="col1">
+						<div class="wd45 bl l_float fieldPad phide">OthLev:</div>
+						<div class="wp70 bv l_float fieldPad phide"></div>
+					</div>
+				</div>
+
+				<!-- End Room Dimensions Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Utilities Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>UTILITIES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols">
+					<div class="col">
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Heat:</div>
+						<div class="wp86 bv l_float fieldPad ">1 Unit, Forced Hot Air</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Cool:</div>
+						<div class="wp86 bv l_float fieldPad ">1 Unit, Central Air</div>
+					
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Fuel:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas-Natural</div>
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Service:</div>
+						<div class="wp86 bv l_float fieldPad ">Cable TV Available</div>	
+
+					</div>
+					<div class="col">
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Sewer:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Sewer</div>
+
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Utilities:</div>
+						<div class="wp86 bv l_float fieldPad ">Electric, Gas-Natural</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Water:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Water</div>	
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">WtrHt:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas</div>	
+
+					</div>
+				
+				</div>
+				<!-- End Utilities Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Financial Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>FINANCIAL INFORMATION / TAX INFORMATION</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols100">
+					 <div class="col">
+				
+						<div class="wd50 bl l_float fieldPad">Fee:</div>
+						<div class="wp17 bv l_float fieldPad">$335&nbsp;/&nbsp;Monthly</div>
+			
+						<div class="wd60 bl l_float fieldPad phide">FarmAsm:</div>
+						<div class="wp10 bv l_float fieldPad phide"></div>
+						
+						<div class="wd60 bl l_float fieldPad phide">HmWrnty:</div>
+						<div class="wp4  bv l_float fieldPad phide"></div>
+					
+							
+						<div class="wp8 bv r_float fieldPad">$50,000</div>
+						<div class="wd55 bl r_float fieldPad">LndAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">$9,841&nbsp;/&nbsp;2012
+						</div>
+						<div class="wd40 bl r_float fieldPad">Taxes:</div>
+						
+						<div class="clear"></div>	
+						
+						<div class="wd50 bl l_float fieldPad">AppFee:</div>
+						<div class="wp17 bv l_float fieldPad">$00</div>
+						<div class="wd60 bl l_float fieldPad">OTP:</div>
+						<div class="wp10 bv l_float fieldPad">Condominium</div>
+						
+											
+						
+						<div class="wp8 bv r_float fieldPad">$150,826</div>
+						<div class="wd55 bl r_float fieldPad">BldAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">4.903&nbsp;/&nbsp;2012</div>
+						<div class="wd40 bl r_float fieldPad">TaxRt:</div>
+												
+						<div class="clear"></div>
+						
+						<div class="wd50 bl l_float fieldPad">Other:</div>
+						<div class="wp17 bv l_float fieldPad">$&nbsp;/&nbsp;</div>				
+						<div class="wd60 bl l_float fieldPad">Easement:</div>
+						<div class="wp30 bv l_float fieldPad">Unknown&nbsp;/&nbsp;</div>
+				
+						
+						<div class="wp8 bv r_float fieldPad">$200,826</div>
+						<div class="wd55 bl r_float fieldPad">TotAsmt:</div>
+						
+						<div class="clear"></div>
+						<div class="wd50 bl l_float fieldPad">FeeIncl:</div>
+						<div class="wp70 bv l_float fieldPad">Maintenance-Common Area , Snow Removal , Trash Collection</div>
+						
+
+					</div>
+				</div> 
+			
+				<!-- End Financial Container -->
+			</div><!-- End Report -->
+		</td>
+		
+	</tr>
+</table> <!-- End Container -->
+	
+	
+
+<table border="0" class="gsmlsfooterclass" cellspacing="0" cellpadding="0" >
+			<tr>
+				<td class="footpadleft" align="left">Copyright, Garden State MLS, L.L.C.</td>
+				<td align="center">
+				<font color="#FF0000"><i>**Info. deemed RELIABLE but not GUARANTEED - ALL Room Sizes are Approx.**</i></font></td>
+				
+					<td  class="footpadright"  align="right"><b>REGINA SHEERAN</b></td>
+				
+			</tr>
+</table>
+<div><div id="dummyspan" name="dummyspan"></div></div>
+<script>
+
+if(br_type.indexOf("MSIE 7.0") > -1){
+		
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+}else if(br_type.indexOf("MSIE 9.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 10.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<p style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 8.0") > -1){
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+	
+}else if(br_type.indexOf("Firefox") > -1){
+		
+    if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+	 
+}else if (br_type.indexOf("Opera") != -1) {
+		
+}else if (br_type.indexOf("Safari") != -1 && br_type.indexOf("Chrome") ==-1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+}else if (br_type.indexOf("konqueror") != -1) {
+		
+}else if (br_type.indexOf("Chrome") != -1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+} else {
+	
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML =  '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+}
+</script>
+<script>
+
+function searchreportforagent(selsysid){
+
+	membersessionId = document.forms[0].membersessionId.value;
+window.open("/mlsreports/runProfileReport.do?method=getAgentProfileReport&selectedPubId="+selsysid+"&membersessionId="+membersessionId);
+
+}
+</script>
+	
+	
+	
+	<table class="container">
+		<tr>
+			<td rowspan="1" valign="top">
+			<!-- End Container -->
+				<div class="sideControl" >
+					<div >
+						<div class="gradientBox title">
+							<div class="label">Tools</div>
+						</div>
+					</div>
+					
+
+
+
+
+
+
+
+
+
+				<div>
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  id="medid"  onmouseover="(document.getElementById('medid')).style.color ='black'" onmouseout="(document.getElementById('medid')).style.color ='#5a5959'">
+					
+						<a href ="/public/show_public_report_rpt.do?method=getData&sysid= 4368999&ptype=XPY&report=res_media&pubid=242300&pubid=242300&fromPublic=PUBLIC&app=public" target="aaa" style="text-decoration: none">
+						 
+						 	Media (13)&nbsp;
+						 
+						</a>
+						</div>
+					</div>
+				</div>
+
+
+				 <div >
+				 
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div id="mpid" onmouseover="(document.getElementById('mpid')).style.color ='black'" onmouseout="(document.getElementById('mpid')).style.color ='#5a5959'">
+					<a href='/public/show_public_report_rpt.do?method=getMapSingle&pubid=242300&bundle=public.English&report=clientfull&Id=87745315_22746&mlsnum=3068838&lstngsysid=4368999&ptype=XPY&fromPublic=PUBLIC&report=clientfull&Id=87745315_22746' target="aaa" onmouseover="openmapdiv(event,'http://www.mapquestapi.com/staticmap/v3/getmap?KEY=Gmjtd%7Cluu22g01nu%2Crw%3Do5-lz250&center=40.876038,-74.164595&size=200,200&type=map&zoom=12&imagetype=png&pois=1,40.876038,-74.164595');" onmouseout="closesmediadiv();" style="text-decoration: none">
+						 
+						 	Map
+					 </a></div>
+					</div>
+				</div>	
+		
+			
+				
+			<div >
+				<div  class="select ht20 gradientBoxGray titleBarsGray cartclass"  onclick="javascript:printdialog(event);" >
+					<div class="mal5" id="prid" onmouseover="(document.getElementById('prid')).style.color ='black'" onmouseout="(document.getElementById('prid')).style.color ='#5a5959'" >
+						Print
+					</div>
+				
+				</div>
+			</div>	
+			<div >
+				<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  class="mal5" id="clsdid"  onmouseover="(document.getElementById('clsdid')).style.color ='black'" onmouseout="(document.getElementById('clsdid')).style.color ='#5a5959'" onclick="nomsgclose();">
+		
+					Close
+				</div>
+				</div>
+			</div>	
+			
+			<div >
+				<div class=" ht20 " >
+					
+				</div>
+			</div>	
+			
+ 
+			
+					
+												
+												
+			
+		
+	
+	
+	
+	</div>
+	</td> <!--  Don't delete this -->
+
+			<td rowspan="2" class="wp100 padl127" valign="top"id="4368999" name ="4368999">
+				<!-- Report Start -->
+				<div class="container2" >
+				<!-- Title Bar -->
+	
+				<div class="title gradientBox">
+					<div class="title-select chkbxshow"><input class="chkbxshow" type="checkbox" name="selectrecord" onclick="selectParentRecord()" value="4368999"></div>
+					<div class="title-label">Passaic*&nbsp;Clifton City* (2502)</div> 
+					<div class="title-addr">7202&nbsp;Ravenscroft Rd*</div>				
+					<div class="title-price">List Price: $425,000</div> 
+				</div> 
+				<!-- End Title Bar -->
+				<!-- Begin Main -->
+	
+				<table class="main-t" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td class="bv">Residential Client Full</td>
+						<td class="wd5">MLS#:</td>
+						<td class="wp20 bv">3068838</td>
+						<td class="wp5">Section:</td>
+						<td class="wp30 bv"></td>
+						<td>LP:</td>
+						<td class="bv">$425,000</td>
+															
+					</tr>
+	
+					<tr>
+							
+<span id="4368999_clientfulltitledesc">	    		    
+		    </span>
+<td id="4368999_clientfulllowresid" rowspan="15" >
+				
+				<div class="main-img">
+				<a href="javascript:show_highres_media('0','4368999_clientfull','242300','13')"> <img border="0" src='http://img.gsmls.com/imagedb/lowres/38/100895411_1.jpg' align="center" id="4368999_clientfulllowresimage" name="4368999_clientfulllowresimage"> </a>
+				</div>
+				<div class="img-nav"> 
+					<div class="img-nav-l">
+						
+						<span id="4368999_clientfullleftimage" style="display:block;">
+						<img src="images/backward.png" width="20px" alt="backward" onclick="moveleft('0','4368999_clientfull','242300','l');"/>
+						</span>
+						
+					</div>
+					<div class="img-nav-m " style="color: #000000;">
+						
+						<a href="javascript:show_highres_media('0','4368999_clientfull','242300','13')" style="color:#000000">
+						<span id="4368999_clientfulltocnt">1</span> of 13 (View  All 13)</a>
+						
+					</div>
+					<div class="img-nav-r">
+						
+						<span id="4368999_clientfullrightimage" style="display:block;">
+						<img src="images/forward.png" width="20px" alt="foward" onclick="moveright('0','4368999_clientfull','242300','r');"/>
+						</span>
+						
+					</div>
+				</div>
+				
+
+
+		<input type="hidden" name="4368999_clientfullimageurl0" id="4368999_clientfullimageurl0" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl1" id="4368999_clientfullimageurl1" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl2" id="4368999_clientfullimageurl2" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl3" id="4368999_clientfullimageurl3" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl4" id="4368999_clientfullimageurl4" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl5" id="4368999_clientfullimageurl5" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl6" id="4368999_clientfullimageurl6" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl7" id="4368999_clientfullimageurl7" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl8" id="4368999_clientfullimageurl8" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl9" id="4368999_clientfullimageurl9" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl10" id="4368999_clientfullimageurl10" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl11" id="4368999_clientfullimageurl11" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl12" id="4368999_clientfullimageurl12" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl13" id="4368999_clientfullimageurl13" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl14" id="4368999_clientfullimageurl14" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl15" id="4368999_clientfullimageurl15" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl16" id="4368999_clientfullimageurl16" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl17" id="4368999_clientfullimageurl17" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl18" id="4368999_clientfullimageurl18" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl19" id="4368999_clientfullimageurl19" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl20" id="4368999_clientfullimageurl20" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl21" id="4368999_clientfullimageurl21" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl22" id="4368999_clientfullimageurl22" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl23" id="4368999_clientfullimageurl23" value='null'>
+	  <input type="hidden" name="4368999_clientfullimageurl24" id="4368999_clientfullimageurl24" value='null'>
+	  <!---added for titledesc -->
+	  <input type="hidden" name="4368999_clientfullimagetitledesc0" id="4368999_clientfullimagetitledesc0" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc1" id="4368999_clientfullimagetitledesc1" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc2" id="4368999_clientfullimagetitledesc2" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc3" id="4368999_clientfullimagetitledesc3" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc4" id="4368999_clientfullimagetitledesc4" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc5" id="4368999_clientfullimagetitledesc5" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc6" id="4368999_clientfullimagetitledesc6" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc7" id="4368999_clientfullimagetitledesc7" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc8" id="4368999_clientfullimagetitledesc8" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc9" id="4368999_clientfullimagetitledesc9" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc10" id="4368999_clientfullimagetitledesc10" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc11" id="4368999_clientfullimagetitledesc11" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc12" id="4368999_clientfullimagetitledesc12" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc13" id="4368999_clientfullimagetitledesc13" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc14" id="4368999_clientfullimagetitledesc14" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc15" id="4368999_clientfullimagetitledesc15" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc16" id="4368999_clientfullimagetitledesc16" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc17" id="4368999_clientfullimagetitledesc17" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc18" id="4368999_clientfullimagetitledesc18" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc19" id="4368999_clientfullimagetitledesc19" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc20" id="4368999_clientfullimagetitledesc20" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc21" id="4368999_clientfullimagetitledesc21" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc22" id="4368999_clientfullimagetitledesc22" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc23" id="4368999_clientfullimagetitledesc23" value='null'>
+		<input type="hidden" name="4368999_clientfullimagetitledesc24"  id="4368999_clientfullimagetitledesc24" value='null'>
+	 	<input type="hidden" name="4368999_clientfullcurrentcnt" id="4368999_clientfullcurrentcnt" value='null'>
+	  <input type="hidden" name="4368999_clientfullimagecnt" id="4368999_clientfullimagecnt" value='null'>
+	  <input type="hidden" name="currlstng" id="currlstng" value='4368999_clientfull'> 
+	  </td>
+			
+					</tr>
+	
+					<tr>
+						<td class="wd5">Status:</td>
+						<td class="wp20 bv">Active</td>
+						<td class="wp5">ZN:</td>
+						<td class="wp30 bv"></td>
+						<td>OLP:</td>
+						<td class="bv">$445,000</td>
+					</tr>
+					<tr>
+						<td>Rms:</td>
+						<td class="bv">5</td>
+						<td>GRS:</td>
+						<td class="bv">  </td>
+						<td>SP:</td>
+						<td class="bv"></td>
+														
+					</tr>					
+					<tr>
+						<td>Bdrm:</td>
+						<td class="bv">2</td>
+						<td>MSJR:</td>
+						<td class="bv"> </td>
+						<td class="wp5">LD:</td>
+						<td class="wp20 bv">08/21/2013</td>
+														
+					</tr>
+					<tr>
+						<td>FB:</td>
+						<td class="bv">2</td>
+						<td>HS:</td>
+						<td class="bv"></td>
+						<td>UCD:</td>
+						<td class="wp20 bv"></td>														
+					</tr>
+					<tr>
+						<td>HB:</td>
+						<td class="bv">0</td>
+						<td>Acres:</td>
+						<td class="bv">*</td>
+						
+						<td>CD:</td>
+						<td class="wp20 bv"></td>
+						
+						
+																								
+					</tr>
+					<tr>
+						<td>ZIP:</td>
+						<td class="bv">07013-7612*</td>
+						<td>LtSz:</td>
+						<td class="bv">0.3704%*</td>
+						<td>ADM:</td>
+						<td class="bv">53</td>																		
+					</tr>
+					<tr>
+						<td>RZIP:</td>
+						<td class="bv"></td>
+						<td>SqFt:</td>
+						<td class="bv">1505</td>
+						<td>DOM:</td>
+						<td class="bv">53</td>																		
+					</tr>
+					<tr>
+						<td>Block:</td>
+						<td class="bv">28.2*</td>
+						<td>CLR:</td>
+						<td class="bv"></td>
+						<td>SDA:</td>
+						<td class="bv"></td>																			
+					</tr>
+					<tr>
+						<td>Lot:</td>
+						<td class="bv">1.3*</td>
+						<td>CL:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>																				
+					</tr>
+
+					<tr>
+						<td>Unit&nbsp;#:</td>
+						<td class="bv"></td>
+						<td>GSMLS.com:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>												
+					</tr>
+					
+					<tr>
+						<td>Floor&nbsp;#:</td>
+						<td class="bv"></td>
+						<td>Pets:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>											
+					</tr>
+					
+					<tr>
+						<td>Bldg&nbsp;#:</td>
+						<td class="bv"></td>
+						<td colspan="4">YB/Desc/Ren: <b>2007&nbsp;/&nbsp;&nbsp;/&nbsp;</b></td>
+					</tr>					
+					<tr>
+						<td colspan="1">FHA55+:</td>	
+						<td colspan="1" class="bv">Yes</td>	
+						<td colspan="4">PSubType: <b>CCT</b></td>	
+					</tr>
+									
+					<tr>
+						<td colspan="6">Style: <b>One Floor Unit</b></td>	
+					</tr>
+				</table>
+		
+	    		
+	    		<div class="clear"></div>
+
+				<!-- Remarks Container -->		
+				<div class="cols cols100 ">
+					<div class="col ">
+						<!-- Directions Container -->
+						
+							<div class="wp100 fieldPad l_float">
+								Directions: <b>COLFAX TO CAMBRIDGE CROSSING TO WINTHROP CRT BUILDING #7 </b>
+							</div>
+						
+						
+						
+						<div class="clear"></div>
+						
+						<!-- Client Remarks Container -->
+						<div class="wp100 fieldPad l_float">
+							Remarks:<b>BETTER THAN NEW! STUNNING, SOPHISTICATED OPEN FLOOR PLAN, WITH MANY UPGRADES. MUST SEE THIS CONDO TO APPRECIATE! &nbsp;</b>
+						</div>
+						
+					</div>
+				</div>
+				<!-- End Remarks Container -->	
+				<div class="clear"></div>
+
+				<!-- Interior Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>INTERIOR</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Applncs:</div>
+						<div class="bv l_float wp80 fieldPad " >CODetect, Dishwasher, Dryer              , Microwave Oven, Self Cleaning Oven, Refrigerator, Washer</div>
+						
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Bsmnt:</div>
+						<div class="bv l_float wp80 fieldPad ">No&nbsp;/&nbsp;</div>
+					
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad phide">Dine:</div>
+						<div class="bv l_float wp80 fieldPad phide"></div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad ">Exclu:</div>
+						<div class="bv l_float wp80 fieldPad ">CEILING FIXTURES</div>
+					
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad ">FirePl:</div>
+						<div class="bv l_float wp80 fieldPad ">1&nbsp;/&nbsp;Gas Fireplace, Living Room</div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Floor:</div>
+						<div class="bv l_float wp80 fieldPad ">Wood</div>
+					</div>
+					
+					<div class="col">
+						<div class="clear"></div>								
+						<div class="bl l_float wp99 fieldPad phide">Handicap Modified: <font class="bv"></font></div>
+						
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">IntFeat:</div>
+						<div class="bv l_float wp80 fieldPad ">CODetect, Intercom, Security System</div>
+					
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">Kitch:</div>
+						<div class="bv l_float wp80 fieldPad ">Breakfast Bar, Separate Dining Area</div>
+											
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">MastBr:</div>
+						<div class="bv l_float wp80 fieldPad ">Full Bath, Walk-In Closet</div>
+								
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">MstBath:</div>
+						<div class="bv l_float wp80 fieldPad " >Jetted Tub, Stall Shower And Tub</div>
+	
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">P-Use:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">Suite:</div>
+						<div class="bv l_float  wp80 fieldPad phide">/</div>
+							
+						
+					</div>
+				</div>
+				<!-- Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>EXTERIOR / OTHER FEATURES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Amnt:</div>
+						<div class="bv l_float  wp80 fieldPad ">Billiards Room, Club House, Elevator, Exercise Room, Kitchen Facilities, Pool-Outdoor, Sauna, Storage</div>
+	
+							
+
+						<div class="clear"></div>			
+						<div class="bl l_float  wd55 fieldPad ">Drive:</div>
+						<div class="bv l_float  wp80 fieldPad ">&nbsp;/&nbsp;Assigned</div>
+
+							
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Exterior:</div>
+						<div class="bv l_float  wp80 fieldPad ">Stucco</div>
+	
+							
+		
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">ExtFeat:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+		
+
+					</div>
+					
+					<div class="col">
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Garage:</div>
+						<div class="bv l_float  wp80 fieldPad ">1&nbsp;/&nbsp; Assigned, Attached Garage, Garage Door Opener</div>
+				
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">LotDesc:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Pool:</div>
+						<div class="bv l_float  wp80 fieldPad ">Yes/Association Pool</div>
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Roof:</div>
+						<div class="bv l_float  wp80 fieldPad ">Asphalt Shingle</div>
+
+					</div>
+				</div>
+				
+				
+				<!-- End Interior Exterior Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Room Dimensions Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>ROOMS</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="cols cols19 ">
+
+					<div class="col">			
+						<div class="wd45 bl l_float fieldPad">LivRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;Second</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd45 bl l_float fieldPad">DinRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;Second</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Kitch:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;Second</div>
+
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Den:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+	
+					</div>
+	
+					<div class="col">	
+						<div class="wd50 bl l_float fieldPad">FamRm:</div>
+						<div class="wp50 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+			
+				</div>
+
+				<div class="clear"></div>
+				
+				
+				<div class="cols cols19 ">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed1:</div>
+						<div class="wp65 bv l_float fieldPad ">&nbsp;/&nbsp;Second</div>
+					</div>
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed2:</div>
+						<div class="wp65 bv l_float fieldPad ">&nbsp;/&nbsp;Second</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed3:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed4:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+				</div>
+								
+				<div class="clear"></div>		
+						
+				<div class="cols cols100 ">
+					<div class="col">
+				
+						<div class="wp25 l_float fieldPad"><font class="bl">Laundry Room :</font> <font class="bv">/Second</font></div>
+		
+
+						<div class="wp25 l_float fieldPad"><font class="bl"> :</font> <font class="bv">/</font></div>
+					
+					
+						<div class="wp25 l_float fieldPad"><font class="bl">: </font> <font class="bv">/</font></div>
+					
+			
+						<div class="wp24 l_float fieldPad"><font class="bl">: </font>  <font class="bv">/</font></div>
+						
+					</div>
+				</div>
+						
+				<div class="cols cols100 ">
+				
+					<div class="col ">
+						<div class="wd45 bl l_float fieldPad phide">LevelB:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">LevelG:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+	
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Level1:</div>
+						<div class="wp93 bv l_float fieldPad ">Foyer, Kitchen, Laundry Room, Living Room, Storage Room, Utility Room, Entrance Vestibule</div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Level2:</div>
+						<div class="wp93 bv l_float fieldPad ">2 Bedrooms, Bath Main, Bath(s) Other, Dining Room</div>
+					</div>
+				
+				</div>
+				
+				<div class="cols cols6040">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level3:</div>
+						<div class="wp83 bv l_float fieldPad phide"></div>
+					</div>
+					<div class="col1">
+						<div class="wd45 bl l_float fieldPad phide">OthLev:</div>
+						<div class="wp70 bv l_float fieldPad phide"></div>
+					</div>
+				</div>
+
+				<!-- End Room Dimensions Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Utilities Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>UTILITIES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols">
+					<div class="col">
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Heat:</div>
+						<div class="wp86 bv l_float fieldPad ">Forced Hot Air</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Cool:</div>
+						<div class="wp86 bv l_float fieldPad ">Central Air</div>
+					
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Fuel:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas-Natural</div>
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad phide">Service:</div>
+						<div class="wp86 bv l_float fieldPad phide"></div>	
+
+					</div>
+					<div class="col">
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Sewer:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Sewer</div>
+
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Utilities:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas-Natural</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Water:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Water</div>	
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad phide">WtrHt:</div>
+						<div class="wp86 bv l_float fieldPad phide"></div>	
+
+					</div>
+				
+				</div>
+				<!-- End Utilities Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Financial Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>FINANCIAL INFORMATION / TAX INFORMATION</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols100">
+					 <div class="col">
+				
+						<div class="wd50 bl l_float fieldPad">Fee:</div>
+						<div class="wp17 bv l_float fieldPad">$335&nbsp;/&nbsp;Monthly</div>
+			
+						<div class="wd60 bl l_float fieldPad phide">FarmAsm:</div>
+						<div class="wp10 bv l_float fieldPad phide"></div>
+						
+						<div class="wd60 bl l_float fieldPad phide">HmWrnty:</div>
+						<div class="wp4  bv l_float fieldPad phide"></div>
+					
+							
+						<div class="wp8 bv r_float fieldPad">$80,000</div>
+						<div class="wd55 bl r_float fieldPad">LndAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">$7,540&nbsp;/&nbsp;2012
+						</div>
+						<div class="wd40 bl r_float fieldPad">Taxes:</div>
+						
+						<div class="clear"></div>	
+						
+						<div class="wd50 bl l_float fieldPad">AppFee:</div>
+						<div class="wp17 bv l_float fieldPad">$00</div>
+						<div class="wd60 bl l_float fieldPad">OTP:</div>
+						<div class="wp10 bv l_float fieldPad">Condominium</div>
+						
+											
+						
+						<div class="wp8 bv r_float fieldPad">$73,800</div>
+						<div class="wd55 bl r_float fieldPad">BldAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">4.903&nbsp;/&nbsp;2012</div>
+						<div class="wd40 bl r_float fieldPad">TaxRt:</div>
+												
+						<div class="clear"></div>
+						
+						<div class="wd50 bl l_float fieldPad">Other:</div>
+						<div class="wp17 bv l_float fieldPad">$&nbsp;/&nbsp;</div>				
+						<div class="wd60 bl l_float fieldPad">Easement:</div>
+						<div class="wp30 bv l_float fieldPad">Unknown&nbsp;/&nbsp;</div>
+				
+						
+						<div class="wp8 bv r_float fieldPad">$153,800</div>
+						<div class="wd55 bl r_float fieldPad">TotAsmt:</div>
+						
+						<div class="clear"></div>
+						<div class="wd50 bl l_float fieldPad">FeeIncl:</div>
+						<div class="wp70 bv l_float fieldPad">Maintenance-Common Area , Maintenance-Exterior , Snow Removal , Trash Collection</div>
+						
+
+					</div>
+				</div> 
+			
+				<!-- End Financial Container -->
+			</div><!-- End Report -->
+		</td>
+		
+	</tr>
+</table> <!-- End Container -->
+	
+	
+
+<table border="0" class="gsmlsfooterclass" cellspacing="0" cellpadding="0" >
+			<tr>
+				<td class="footpadleft" align="left">Copyright, Garden State MLS, L.L.C.</td>
+				<td align="center">
+				<font color="#FF0000"><i>**Info. deemed RELIABLE but not GUARANTEED - ALL Room Sizes are Approx.**</i></font></td>
+				
+					<td  class="footpadright"  align="right"><b>REGINA SHEERAN</b></td>
+				
+			</tr>
+</table>
+<div><div id="dummyspan" name="dummyspan"></div></div>
+<script>
+
+if(br_type.indexOf("MSIE 7.0") > -1){
+		
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+}else if(br_type.indexOf("MSIE 9.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 10.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<p style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 8.0") > -1){
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+	
+}else if(br_type.indexOf("Firefox") > -1){
+		
+    if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+	 
+}else if (br_type.indexOf("Opera") != -1) {
+		
+}else if (br_type.indexOf("Safari") != -1 && br_type.indexOf("Chrome") ==-1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+}else if (br_type.indexOf("konqueror") != -1) {
+		
+}else if (br_type.indexOf("Chrome") != -1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+} else {
+	
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML =  '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+}
+</script>
+<script>
+
+function searchreportforagent(selsysid){
+
+	membersessionId = document.forms[0].membersessionId.value;
+window.open("/mlsreports/runProfileReport.do?method=getAgentProfileReport&selectedPubId="+selsysid+"&membersessionId="+membersessionId);
+
+}
+</script>
+	
+	
+	
+	<table class="container">
+		<tr>
+			<td rowspan="1" valign="top">
+			<!-- End Container -->
+				<div class="sideControl" >
+					<div >
+						<div class="gradientBox title">
+							<div class="label">Tools</div>
+						</div>
+					</div>
+					
+
+
+
+
+
+
+
+
+
+				<div>
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  id="medid"  onmouseover="(document.getElementById('medid')).style.color ='black'" onmouseout="(document.getElementById('medid')).style.color ='#5a5959'">
+					
+						<a href ="/public/show_public_report_rpt.do?method=getData&sysid= 4385067&ptype=XPY&report=res_media&pubid=242300&pubid=242300&fromPublic=PUBLIC&app=public" target="aaa" style="text-decoration: none">
+						 
+						 	Media (20)&nbsp;
+						 
+						</a>
+						</div>
+					</div>
+				</div>
+
+
+				 <div >
+				 
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div id="mpid" onmouseover="(document.getElementById('mpid')).style.color ='black'" onmouseout="(document.getElementById('mpid')).style.color ='#5a5959'">
+					<a href='/public/show_public_report_rpt.do?method=getMapSingle&pubid=242300&bundle=public.English&report=clientfull&Id=87745315_22746&mlsnum=3083426&lstngsysid=4385067&ptype=XPY&fromPublic=PUBLIC&report=clientfull&Id=87745315_22746' target="aaa" onmouseover="openmapdiv(event,'http://www.mapquestapi.com/staticmap/v3/getmap?KEY=Gmjtd%7Cluu22g01nu%2Crw%3Do5-lz250&center=40.874582,-74.163879&size=200,200&type=map&zoom=12&imagetype=png&pois=1,40.874582,-74.163879');" onmouseout="closesmediadiv();" style="text-decoration: none">
+						 
+						 	Map
+					 </a></div>
+					</div>
+				</div>	
+		
+			
+				
+			<div >
+				<div  class="select ht20 gradientBoxGray titleBarsGray cartclass"  onclick="javascript:printdialog(event);" >
+					<div class="mal5" id="prid" onmouseover="(document.getElementById('prid')).style.color ='black'" onmouseout="(document.getElementById('prid')).style.color ='#5a5959'" >
+						Print
+					</div>
+				
+				</div>
+			</div>	
+			<div >
+				<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  class="mal5" id="clsdid"  onmouseover="(document.getElementById('clsdid')).style.color ='black'" onmouseout="(document.getElementById('clsdid')).style.color ='#5a5959'" onclick="nomsgclose();">
+		
+					Close
+				</div>
+				</div>
+			</div>	
+			
+			<div >
+				<div class=" ht20 " >
+					
+				</div>
+			</div>	
+			
+ 
+			
+					
+												
+												
+			
+		
+	
+	
+	
+	</div>
+	</td> <!--  Don't delete this -->
+
+			<td rowspan="2" class="wp100 padl127" valign="top"id="4385067" name ="4385067">
+				<!-- Report Start -->
+				<div class="container2" >
+				<!-- Title Bar -->
+	
+				<div class="title gradientBox">
+					<div class="title-select chkbxshow"><input class="chkbxshow" type="checkbox" name="selectrecord" onclick="selectParentRecord()" value="4385067"></div>
+					<div class="title-label">Passaic*&nbsp;Clifton City* (2502)</div> 
+					<div class="title-addr">4306&nbsp;Harcourt Rd*</div>				
+					<div class="title-price">List Price: $438,900</div> 
+				</div> 
+				<!-- End Title Bar -->
+				<!-- Begin Main -->
+	
+				<table class="main-t" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td class="bv">Residential Client Full</td>
+						<td class="wd5">MLS#:</td>
+						<td class="wp20 bv">3083426</td>
+						<td class="wp5">Section:</td>
+						<td class="wp30 bv">Parkwood</td>
+						<td>LP:</td>
+						<td class="bv">$438,900</td>
+															
+					</tr>
+	
+					<tr>
+							
+<span id="4385067_clientfulltitledesc">	    		    
+		    </span>
+<td id="4385067_clientfulllowresid" rowspan="15" >
+				
+				<div class="main-img">
+				<a href="javascript:show_highres_media('0','4385067_clientfull','242300','20')"> <img border="0" src='http://img.gsmls.com/imagedb/lowres/26/100930031_20.jpg' align="center" id="4385067_clientfulllowresimage" name="4385067_clientfulllowresimage"> </a>
+				</div>
+				<div class="img-nav"> 
+					<div class="img-nav-l">
+						
+						<span id="4385067_clientfullleftimage" style="display:block;">
+						<img src="images/backward.png" width="20px" alt="backward" onclick="moveleft('0','4385067_clientfull','242300','l');"/>
+						</span>
+						
+					</div>
+					<div class="img-nav-m " style="color: #000000;">
+						
+						<a href="javascript:show_highres_media('0','4385067_clientfull','242300','20')" style="color:#000000">
+						<span id="4385067_clientfulltocnt">1</span> of 20 (View  All 20)</a>
+						
+					</div>
+					<div class="img-nav-r">
+						
+						<span id="4385067_clientfullrightimage" style="display:block;">
+						<img src="images/forward.png" width="20px" alt="foward" onclick="moveright('0','4385067_clientfull','242300','r');"/>
+						</span>
+						
+					</div>
+				</div>
+				
+
+
+		<input type="hidden" name="4385067_clientfullimageurl0" id="4385067_clientfullimageurl0" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl1" id="4385067_clientfullimageurl1" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl2" id="4385067_clientfullimageurl2" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl3" id="4385067_clientfullimageurl3" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl4" id="4385067_clientfullimageurl4" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl5" id="4385067_clientfullimageurl5" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl6" id="4385067_clientfullimageurl6" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl7" id="4385067_clientfullimageurl7" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl8" id="4385067_clientfullimageurl8" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl9" id="4385067_clientfullimageurl9" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl10" id="4385067_clientfullimageurl10" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl11" id="4385067_clientfullimageurl11" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl12" id="4385067_clientfullimageurl12" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl13" id="4385067_clientfullimageurl13" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl14" id="4385067_clientfullimageurl14" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl15" id="4385067_clientfullimageurl15" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl16" id="4385067_clientfullimageurl16" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl17" id="4385067_clientfullimageurl17" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl18" id="4385067_clientfullimageurl18" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl19" id="4385067_clientfullimageurl19" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl20" id="4385067_clientfullimageurl20" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl21" id="4385067_clientfullimageurl21" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl22" id="4385067_clientfullimageurl22" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl23" id="4385067_clientfullimageurl23" value='null'>
+	  <input type="hidden" name="4385067_clientfullimageurl24" id="4385067_clientfullimageurl24" value='null'>
+	  <!---added for titledesc -->
+	  <input type="hidden" name="4385067_clientfullimagetitledesc0" id="4385067_clientfullimagetitledesc0" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc1" id="4385067_clientfullimagetitledesc1" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc2" id="4385067_clientfullimagetitledesc2" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc3" id="4385067_clientfullimagetitledesc3" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc4" id="4385067_clientfullimagetitledesc4" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc5" id="4385067_clientfullimagetitledesc5" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc6" id="4385067_clientfullimagetitledesc6" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc7" id="4385067_clientfullimagetitledesc7" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc8" id="4385067_clientfullimagetitledesc8" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc9" id="4385067_clientfullimagetitledesc9" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc10" id="4385067_clientfullimagetitledesc10" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc11" id="4385067_clientfullimagetitledesc11" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc12" id="4385067_clientfullimagetitledesc12" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc13" id="4385067_clientfullimagetitledesc13" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc14" id="4385067_clientfullimagetitledesc14" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc15" id="4385067_clientfullimagetitledesc15" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc16" id="4385067_clientfullimagetitledesc16" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc17" id="4385067_clientfullimagetitledesc17" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc18" id="4385067_clientfullimagetitledesc18" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc19" id="4385067_clientfullimagetitledesc19" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc20" id="4385067_clientfullimagetitledesc20" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc21" id="4385067_clientfullimagetitledesc21" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc22" id="4385067_clientfullimagetitledesc22" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc23" id="4385067_clientfullimagetitledesc23" value='null'>
+		<input type="hidden" name="4385067_clientfullimagetitledesc24"  id="4385067_clientfullimagetitledesc24" value='null'>
+	 	<input type="hidden" name="4385067_clientfullcurrentcnt" id="4385067_clientfullcurrentcnt" value='null'>
+	  <input type="hidden" name="4385067_clientfullimagecnt" id="4385067_clientfullimagecnt" value='null'>
+	  <input type="hidden" name="currlstng" id="currlstng" value='4385067_clientfull'> 
+	  </td>
+			
+					</tr>
+	
+					<tr>
+						<td class="wd5">Status:</td>
+						<td class="wp20 bv">Active</td>
+						<td class="wp5">ZN:</td>
+						<td class="wp30 bv">Res</td>
+						<td>OLP:</td>
+						<td class="bv">$438,900</td>
+					</tr>
+					<tr>
+						<td>Rms:</td>
+						<td class="bv">6</td>
+						<td>GRS:</td>
+						<td class="bv">  </td>
+						<td>SP:</td>
+						<td class="bv"></td>
+														
+					</tr>					
+					<tr>
+						<td>Bdrm:</td>
+						<td class="bv">2</td>
+						<td>MSJR:</td>
+						<td class="bv"> </td>
+						<td class="wp5">LD:</td>
+						<td class="wp20 bv">10/01/2013</td>
+														
+					</tr>
+					<tr>
+						<td>FB:</td>
+						<td class="bv">2</td>
+						<td>HS:</td>
+						<td class="bv"></td>
+						<td>UCD:</td>
+						<td class="wp20 bv"></td>														
+					</tr>
+					<tr>
+						<td>HB:</td>
+						<td class="bv">0</td>
+						<td>Acres:</td>
+						<td class="bv">*</td>
+						
+						<td>CD:</td>
+						<td class="wp20 bv"></td>
+						
+						
+																								
+					</tr>
+					<tr>
+						<td>ZIP:</td>
+						<td class="bv">07013-2691*</td>
+						<td>LtSz:</td>
+						<td class="bv">0.3704%*</td>
+						<td>ADM:</td>
+						<td class="bv">11</td>																		
+					</tr>
+					<tr>
+						<td>RZIP:</td>
+						<td class="bv"></td>
+						<td>SqFt:</td>
+						<td class="bv"></td>
+						<td>DOM:</td>
+						<td class="bv">12</td>																		
+					</tr>
+					<tr>
+						<td>Block:</td>
+						<td class="bv">28.2*</td>
+						<td>CLR:</td>
+						<td class="bv"></td>
+						<td>SDA:</td>
+						<td class="bv">Yes</td>																			
+					</tr>
+					<tr>
+						<td>Lot:</td>
+						<td class="bv">1.3*</td>
+						<td>CL:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>																				
+					</tr>
+
+					<tr>
+						<td>Unit&nbsp;#:</td>
+						<td class="bv">306</td>
+						<td>GSMLS.com:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>												
+					</tr>
+					
+					<tr>
+						<td>Floor&nbsp;#:</td>
+						<td class="bv">3</td>
+						<td>Pets:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>											
+					</tr>
+					
+					<tr>
+						<td>Bldg&nbsp;#:</td>
+						<td class="bv">4</td>
+						<td colspan="4">YB/Desc/Ren: <b>2011&nbsp;/&nbsp;Approximate&nbsp;/&nbsp;</b></td>
+					</tr>					
+					<tr>
+						<td colspan="1">FHA55+:</td>	
+						<td colspan="1" class="bv">Yes</td>	
+						<td colspan="4">PSubType: <b>CCT</b></td>	
+					</tr>
+									
+					<tr>
+						<td colspan="6">Style: <b>Development Home, Multi Floor Unit</b></td>	
+					</tr>
+				</table>
+		
+	    		
+	    		<div class="clear"></div>
+
+				<!-- Remarks Container -->		
+				<div class="cols cols100 ">
+					<div class="col ">
+						<!-- Directions Container -->
+						
+							<div class="wp100 fieldPad l_float">
+								Directions: <b>Colfax Ave to Parkwood Entrance(400 Colfax) through gate to Harcourt  </b>
+							</div>
+						
+						
+						
+						<div class="clear"></div>
+						
+						<!-- Client Remarks Container -->
+						<div class="wp100 fieldPad l_float">
+							Remarks:<b>Top Floor Home Custom Upgrades, all fixtures included, spectacular 2br with loft and attic storage, Beautifully finished and decorated by the sellers,Truly Better than New! NY Train and Bus nearby&nbsp;</b>
+						</div>
+						
+					</div>
+				</div>
+				<!-- End Remarks Container -->	
+				<div class="clear"></div>
+
+				<!-- Interior Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>INTERIOR</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Applncs:</div>
+						<div class="bv l_float wp80 fieldPad " >CODetect, Dishwasher, Dryer              , Self Cleaning Oven, Range/Oven-Gas, Washer</div>
+						
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Bsmnt:</div>
+						<div class="bv l_float wp80 fieldPad ">No&nbsp;/&nbsp;</div>
+					
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">Dine:</div>
+						<div class="bv l_float wp80 fieldPad ">Living/Dining Combo</div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad phide">Exclu:</div>
+						<div class="bv l_float wp80 fieldPad phide"></div>
+					
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad ">FirePl:</div>
+						<div class="bv l_float wp80 fieldPad ">1&nbsp;/&nbsp;Gas Fireplace, Living Room</div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad phide">Floor:</div>
+						<div class="bv l_float wp80 fieldPad phide"></div>
+					</div>
+					
+					<div class="col">
+						<div class="clear"></div>								
+						<div class="bl l_float wp99 fieldPad phide">Handicap Modified: <font class="bv"></font></div>
+						
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">IntFeat:</div>
+						<div class="bv l_float wp80 fieldPad ">Blinds, CODetect, Cathedral Ceiling, High Ceilings, Elevator, FireExtg, Intercom, Smoke Detector, Whirlpool, Walk-In Closet</div>
+					
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">Kitch:</div>
+						<div class="bv l_float wp80 fieldPad ">Eat-In Kitchen</div>
+											
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">MastBr:</div>
+						<div class="bv l_float wp80 fieldPad ">Full Bath, Walk-In Closet</div>
+								
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">MstBath:</div>
+						<div class="bv l_float wp80 fieldPad " >Jetted Tub, Stall Shower, Stall Shower And Tub</div>
+	
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">P-Use:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">Suite:</div>
+						<div class="bv l_float  wp80 fieldPad phide">/</div>
+							
+						
+					</div>
+				</div>
+				<!-- Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>EXTERIOR / OTHER FEATURES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">Amnt:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+	
+							
+
+						<div class="clear"></div>			
+						<div class="bl l_float  wd55 fieldPad ">Drive:</div>
+						<div class="bv l_float  wp80 fieldPad ">2&nbsp;/&nbsp;Assigned, Off-Street Parking, On-Street Parking</div>
+
+							
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Exterior:</div>
+						<div class="bv l_float  wp80 fieldPad ">Stucco, Vinyl Siding</div>
+	
+							
+		
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">ExtFeat:</div>
+						<div class="bv l_float  wp80 fieldPad ">Deck</div>
+		
+
+					</div>
+					
+					<div class="col">
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Garage:</div>
+						<div class="bv l_float  wp80 fieldPad ">1&nbsp;/&nbsp; Carport-Attached, On-Street Parking</div>
+				
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">LotDesc:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Pool:</div>
+						<div class="bv l_float  wp80 fieldPad ">Yes/Association Pool</div>
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Roof:</div>
+						<div class="bv l_float  wp80 fieldPad ">Asphalt Shingle</div>
+
+					</div>
+				</div>
+				
+				
+				<!-- End Interior Exterior Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Room Dimensions Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>ROOMS</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="cols cols19 ">
+
+					<div class="col">			
+						<div class="wd45 bl l_float fieldPad">LivRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;Third</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd45 bl l_float fieldPad">DinRm:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;Third</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Kitch:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;Third</div>
+
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Den:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+	
+					</div>
+	
+					<div class="col">	
+						<div class="wd50 bl l_float fieldPad">FamRm:</div>
+						<div class="wp50 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+			
+				</div>
+
+				<div class="clear"></div>
+				
+				
+				<div class="cols cols19 ">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed1:</div>
+						<div class="wp65 bv l_float fieldPad ">&nbsp;/&nbsp;Third</div>
+					</div>
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed2:</div>
+						<div class="wp65 bv l_float fieldPad ">&nbsp;/&nbsp;Third</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed3:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed4:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+				</div>
+								
+				<div class="clear"></div>		
+						
+				<div class="cols cols100 ">
+					<div class="col">
+				
+						<div class="wp25 l_float fieldPad"><font class="bl">Loft :</font> <font class="bv">/</font></div>
+		
+
+						<div class="wp25 l_float fieldPad"><font class="bl"> :</font> <font class="bv">/</font></div>
+					
+					
+						<div class="wp25 l_float fieldPad"><font class="bl">: </font> <font class="bv">/</font></div>
+					
+			
+						<div class="wp24 l_float fieldPad"><font class="bl">: </font>  <font class="bv">/</font></div>
+						
+					</div>
+				</div>
+						
+				<div class="cols cols100 phide">
+				
+					<div class="col ">
+						<div class="wd45 bl l_float fieldPad phide">LevelB:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">LevelG:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+	
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level1:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level2:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+				
+				</div>
+				
+				<div class="cols cols6040">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level3:</div>
+						<div class="wp83 bv l_float fieldPad phide"></div>
+					</div>
+					<div class="col1">
+						<div class="wd45 bl l_float fieldPad phide">OthLev:</div>
+						<div class="wp70 bv l_float fieldPad phide"></div>
+					</div>
+				</div>
+
+				<!-- End Room Dimensions Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Utilities Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>UTILITIES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols">
+					<div class="col">
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Heat:</div>
+						<div class="wp86 bv l_float fieldPad ">Forced Hot Air</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Cool:</div>
+						<div class="wp86 bv l_float fieldPad ">Central Air</div>
+					
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Fuel:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas-Natural</div>
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad phide">Service:</div>
+						<div class="wp86 bv l_float fieldPad phide"></div>	
+
+					</div>
+					<div class="col">
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Sewer:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Sewer</div>
+
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Utilities:</div>
+						<div class="wp86 bv l_float fieldPad ">Electric, Gas-Natural</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Water:</div>
+						<div class="wp86 bv l_float fieldPad ">Public Water</div>	
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">WtrHt:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas</div>	
+
+					</div>
+				
+				</div>
+				<!-- End Utilities Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Financial Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>FINANCIAL INFORMATION / TAX INFORMATION</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols100">
+					 <div class="col">
+				
+						<div class="wd50 bl l_float fieldPad">Fee:</div>
+						<div class="wp17 bv l_float fieldPad">$335&nbsp;/&nbsp;Monthly</div>
+			
+						<div class="wd60 bl l_float fieldPad phide">FarmAsm:</div>
+						<div class="wp10 bv l_float fieldPad phide"></div>
+						
+						<div class="wd60 bl l_float fieldPad phide">HmWrnty:</div>
+						<div class="wp4  bv l_float fieldPad phide"></div>
+					
+							
+						<div class="wp8 bv r_float fieldPad">$80,000</div>
+						<div class="wd55 bl r_float fieldPad">LndAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">$9,153&nbsp;/&nbsp;2012
+						</div>
+						<div class="wd40 bl r_float fieldPad">Taxes:</div>
+						
+						<div class="clear"></div>	
+						
+						<div class="wd50 bl l_float fieldPad">AppFee:</div>
+						<div class="wp17 bv l_float fieldPad">$1,005</div>
+						<div class="wd60 bl l_float fieldPad">OTP:</div>
+						<div class="wp10 bv l_float fieldPad">Condominium</div>
+						
+											
+						
+						<div class="wp8 bv r_float fieldPad">$106,700</div>
+						<div class="wd55 bl r_float fieldPad">BldAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">4.903&nbsp;/&nbsp;2012</div>
+						<div class="wd40 bl r_float fieldPad">TaxRt:</div>
+												
+						<div class="clear"></div>
+						
+						<div class="wd50 bl l_float fieldPad">Other:</div>
+						<div class="wp17 bv l_float fieldPad">$&nbsp;/&nbsp;One Time</div>				
+						<div class="wd60 bl l_float fieldPad">Easement:</div>
+						<div class="wp30 bv l_float fieldPad">Unknown&nbsp;/&nbsp;</div>
+				
+						
+						<div class="wp8 bv r_float fieldPad">$186,700</div>
+						<div class="wd55 bl r_float fieldPad">TotAsmt:</div>
+						
+						<div class="clear"></div>
+						<div class="wd50 bl l_float fieldPad">FeeIncl:</div>
+						<div class="wp70 bv l_float fieldPad">Maintenance-Common Area , Maintenance-Exterior , Snow Removal , Trash Collection</div>
+						
+
+					</div>
+				</div> 
+			
+				<!-- End Financial Container -->
+			</div><!-- End Report -->
+		</td>
+		
+	</tr>
+</table> <!-- End Container -->
+	
+	
+
+<table border="0" class="gsmlsfooterclass" cellspacing="0" cellpadding="0" >
+			<tr>
+				<td class="footpadleft" align="left">Copyright, Garden State MLS, L.L.C.</td>
+				<td align="center">
+				<font color="#FF0000"><i>**Info. deemed RELIABLE but not GUARANTEED - ALL Room Sizes are Approx.**</i></font></td>
+				
+					<td  class="footpadright"  align="right"><b>REGINA SHEERAN</b></td>
+				
+			</tr>
+</table>
+<div><div id="dummyspan" name="dummyspan"></div></div>
+<script>
+
+if(br_type.indexOf("MSIE 7.0") > -1){
+		
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+}else if(br_type.indexOf("MSIE 9.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 10.0") > -1){
+
+	//alert(document.all['pagebreakspan'].length);
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<p style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+	
+}else if(br_type.indexOf("MSIE 8.0") > -1){
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<table><tr><td><p style="page-break-before: always"></td></tr></table>';
+		}   
+	}
+	
+}else if(br_type.indexOf("Firefox") > -1){
+		
+    if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+	 
+}else if (br_type.indexOf("Opera") != -1) {
+		
+}else if (br_type.indexOf("Safari") != -1 && br_type.indexOf("Chrome") ==-1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+}else if (br_type.indexOf("konqueror") != -1) {
+		
+}else if (br_type.indexOf("Chrome") != -1) {
+			
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML = '<div><p style="page-break-before: always"></div>';
+		}   
+	}
+} else {
+	
+	if(document.getElementById('dummyspan')){
+		if(document.getElementById('dummyspan').parentNode){
+			document.getElementById('dummyspan').parentNode.innerHTML =  '<hr style="page-break-before: always;visibility:hidden;" />';
+		}   
+	}
+}
+</script>
+<script>
+
+function searchreportforagent(selsysid){
+
+	membersessionId = document.forms[0].membersessionId.value;
+window.open("/mlsreports/runProfileReport.do?method=getAgentProfileReport&selectedPubId="+selsysid+"&membersessionId="+membersessionId);
+
+}
+</script>
+	
+	
+	
+	<table class="container">
+		<tr>
+			<td rowspan="1" valign="top">
+			<!-- End Container -->
+				<div class="sideControl" >
+					<div >
+						<div class="gradientBox title">
+							<div class="label">Tools</div>
+						</div>
+					</div>
+					
+
+
+
+
+
+
+
+
+
+				<div>
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  id="medid"  onmouseover="(document.getElementById('medid')).style.color ='black'" onmouseout="(document.getElementById('medid')).style.color ='#5a5959'">
+					
+						<a href ="/public/show_public_report_rpt.do?method=getData&sysid= 4384396&ptype=XPY&report=res_media&pubid=242300&pubid=242300&fromPublic=PUBLIC&app=public" target="aaa" style="text-decoration: none">
+						 
+						 	Media (0)&nbsp;
+						 
+						</a>
+						</div>
+					</div>
+				</div>
+
+
+				 <div >
+				 
+					<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div id="mpid" onmouseover="(document.getElementById('mpid')).style.color ='black'" onmouseout="(document.getElementById('mpid')).style.color ='#5a5959'">
+					<a href='/public/show_public_report_rpt.do?method=getMapSingle&pubid=242300&bundle=public.English&report=clientfull&Id=87745315_22746&mlsnum=3086238&lstngsysid=4384396&ptype=XPY&fromPublic=PUBLIC&report=clientfull&Id=87745315_22746' target="aaa" onmouseover="openmapdiv(event,'http://www.mapquestapi.com/staticmap/v3/getmap?KEY=Gmjtd%7Cluu22g01nu%2Crw%3Do5-lz250&center=40.874578,-74.163876&size=200,200&type=map&zoom=12&imagetype=png&pois=1,40.874578,-74.163876');" onmouseout="closesmediadiv();" style="text-decoration: none">
+						 
+						 	Map
+					 </a></div>
+					</div>
+				</div>	
+		
+			
+				
+			<div >
+				<div  class="select ht20 gradientBoxGray titleBarsGray cartclass"  onclick="javascript:printdialog(event);" >
+					<div class="mal5" id="prid" onmouseover="(document.getElementById('prid')).style.color ='black'" onmouseout="(document.getElementById('prid')).style.color ='#5a5959'" >
+						Print
+					</div>
+				
+				</div>
+			</div>	
+			<div >
+				<div class="select ht20 gradientBoxGray titleBarsGray cartclass" >
+					<div  class="mal5" id="clsdid"  onmouseover="(document.getElementById('clsdid')).style.color ='black'" onmouseout="(document.getElementById('clsdid')).style.color ='#5a5959'" onclick="nomsgclose();">
+		
+					Close
+				</div>
+				</div>
+			</div>	
+			
+			<div >
+				<div class=" ht20 " >
+					
+				</div>
+			</div>	
+			
+ 
+			
+					
+												
+												
+			
+		
+	
+	
+	
+	</div>
+	</td> <!--  Don't delete this -->
+
+			<td rowspan="2" class="wp100 padl127" valign="top"id="4384396" name ="4384396">
+				<!-- Report Start -->
+				<div class="container2" >
+				<!-- Title Bar -->
+	
+				<div class="title gradientBox">
+					<div class="title-select chkbxshow"><input class="chkbxshow" type="checkbox" name="selectrecord" onclick="selectParentRecord()" value="4384396"></div>
+					<div class="title-label">Passaic*&nbsp;Clifton City* (2502)</div> 
+					<div class="title-addr">4301&nbsp;Harcourt Rd*</div>				
+					<div class="title-price">List Price: $559,000</div> 
+				</div> 
+				<!-- End Title Bar -->
+				<!-- Begin Main -->
+	
+				<table class="main-t" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td class="bv">Residential Client Full</td>
+						<td class="wd5">MLS#:</td>
+						<td class="wp20 bv">3086238</td>
+						<td class="wp5">Section:</td>
+						<td class="wp30 bv">Parkwood at Cambridge Cross</td>
+						<td>LP:</td>
+						<td class="bv">$559,000</td>
+															
+					</tr>
+	
+					<tr>
+							
+<span id="4384396_clientfulltitledesc">	    		    
+		    </span>
+<td id="4384396_clientfulllowresid" rowspan="15" >
+				
+				<div class="main-img">
+				<a href="javascript:show_highres_media('0','4384396_clientfull','242300','0')"> <img border="0" src='http://img.gsmls.com/imagedb/lowres/nopic.jpg' align="center" id="4384396_clientfulllowresimage" name="4384396_clientfulllowresimage"> </a>
+				</div>
+				<div class="img-nav"> 
+					<div class="img-nav-l">
+						
+					</div>
+					<div class="img-nav-m " style="color: #000000;">
+						
+					</div>
+					<div class="img-nav-r">
+						
+					</div>
+				</div>
+				
+
+
+		<input type="hidden" name="4384396_clientfullimageurl0" id="4384396_clientfullimageurl0" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl1" id="4384396_clientfullimageurl1" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl2" id="4384396_clientfullimageurl2" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl3" id="4384396_clientfullimageurl3" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl4" id="4384396_clientfullimageurl4" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl5" id="4384396_clientfullimageurl5" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl6" id="4384396_clientfullimageurl6" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl7" id="4384396_clientfullimageurl7" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl8" id="4384396_clientfullimageurl8" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl9" id="4384396_clientfullimageurl9" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl10" id="4384396_clientfullimageurl10" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl11" id="4384396_clientfullimageurl11" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl12" id="4384396_clientfullimageurl12" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl13" id="4384396_clientfullimageurl13" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl14" id="4384396_clientfullimageurl14" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl15" id="4384396_clientfullimageurl15" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl16" id="4384396_clientfullimageurl16" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl17" id="4384396_clientfullimageurl17" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl18" id="4384396_clientfullimageurl18" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl19" id="4384396_clientfullimageurl19" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl20" id="4384396_clientfullimageurl20" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl21" id="4384396_clientfullimageurl21" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl22" id="4384396_clientfullimageurl22" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl23" id="4384396_clientfullimageurl23" value='null'>
+	  <input type="hidden" name="4384396_clientfullimageurl24" id="4384396_clientfullimageurl24" value='null'>
+	  <!---added for titledesc -->
+	  <input type="hidden" name="4384396_clientfullimagetitledesc0" id="4384396_clientfullimagetitledesc0" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc1" id="4384396_clientfullimagetitledesc1" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc2" id="4384396_clientfullimagetitledesc2" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc3" id="4384396_clientfullimagetitledesc3" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc4" id="4384396_clientfullimagetitledesc4" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc5" id="4384396_clientfullimagetitledesc5" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc6" id="4384396_clientfullimagetitledesc6" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc7" id="4384396_clientfullimagetitledesc7" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc8" id="4384396_clientfullimagetitledesc8" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc9" id="4384396_clientfullimagetitledesc9" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc10" id="4384396_clientfullimagetitledesc10" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc11" id="4384396_clientfullimagetitledesc11" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc12" id="4384396_clientfullimagetitledesc12" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc13" id="4384396_clientfullimagetitledesc13" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc14" id="4384396_clientfullimagetitledesc14" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc15" id="4384396_clientfullimagetitledesc15" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc16" id="4384396_clientfullimagetitledesc16" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc17" id="4384396_clientfullimagetitledesc17" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc18" id="4384396_clientfullimagetitledesc18" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc19" id="4384396_clientfullimagetitledesc19" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc20" id="4384396_clientfullimagetitledesc20" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc21" id="4384396_clientfullimagetitledesc21" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc22" id="4384396_clientfullimagetitledesc22" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc23" id="4384396_clientfullimagetitledesc23" value='null'>
+		<input type="hidden" name="4384396_clientfullimagetitledesc24"  id="4384396_clientfullimagetitledesc24" value='null'>
+	 	<input type="hidden" name="4384396_clientfullcurrentcnt" id="4384396_clientfullcurrentcnt" value='null'>
+	  <input type="hidden" name="4384396_clientfullimagecnt" id="4384396_clientfullimagecnt" value='null'>
+	  <input type="hidden" name="currlstng" id="currlstng" value='4384396_clientfull'> 
+	  </td>
+			
+					</tr>
+	
+					<tr>
+						<td class="wd5">Status:</td>
+						<td class="wp20 bv">Active</td>
+						<td class="wp5">ZN:</td>
+						<td class="wp30 bv"></td>
+						<td>OLP:</td>
+						<td class="bv">$559,000</td>
+					</tr>
+					<tr>
+						<td>Rms:</td>
+						<td class="bv">5</td>
+						<td>GRS:</td>
+						<td class="bv">  </td>
+						<td>SP:</td>
+						<td class="bv"></td>
+														
+					</tr>					
+					<tr>
+						<td>Bdrm:</td>
+						<td class="bv">2</td>
+						<td>MSJR:</td>
+						<td class="bv"> </td>
+						<td class="wp5">LD:</td>
+						<td class="wp20 bv">10/09/2013</td>
+														
+					</tr>
+					<tr>
+						<td>FB:</td>
+						<td class="bv">2</td>
+						<td>HS:</td>
+						<td class="bv"></td>
+						<td>UCD:</td>
+						<td class="wp20 bv"></td>														
+					</tr>
+					<tr>
+						<td>HB:</td>
+						<td class="bv">0</td>
+						<td>Acres:</td>
+						<td class="bv">.37</td>
+						
+						<td>CD:</td>
+						<td class="wp20 bv"></td>
+						
+						
+																								
+					</tr>
+					<tr>
+						<td>ZIP:</td>
+						<td class="bv">07013-2691*</td>
+						<td>LtSz:</td>
+						<td class="bv">*</td>
+						<td>ADM:</td>
+						<td class="bv">4</td>																		
+					</tr>
+					<tr>
+						<td>RZIP:</td>
+						<td class="bv"></td>
+						<td>SqFt:</td>
+						<td class="bv">2431</td>
+						<td>DOM:</td>
+						<td class="bv">4</td>																		
+					</tr>
+					<tr>
+						<td>Block:</td>
+						<td class="bv">28.2*</td>
+						<td>CLR:</td>
+						<td class="bv">beige</td>
+						<td>SDA:</td>
+						<td class="bv">Yes</td>																			
+					</tr>
+					<tr>
+						<td>Lot:</td>
+						<td class="bv">1.3*</td>
+						<td>CL:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>																				
+					</tr>
+
+					<tr>
+						<td>Unit&nbsp;#:</td>
+						<td class="bv">4301</td>
+						<td>GSMLS.com:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>												
+					</tr>
+					
+					<tr>
+						<td>Floor&nbsp;#:</td>
+						<td class="bv">4</td>
+						<td>Pets:</td>
+						<td class="bv">Yes</td>
+						<td></td>
+						<td class="bv"></td>											
+					</tr>
+					
+					<tr>
+						<td>Bldg&nbsp;#:</td>
+						<td class="bv">4</td>
+						<td colspan="4">YB/Desc/Ren: <b>2011&nbsp;/&nbsp;&nbsp;/&nbsp;</b></td>
+					</tr>					
+					<tr>
+						<td colspan="1">FHA55+:</td>	
+						<td colspan="1" class="bv">Yes</td>	
+						<td colspan="4">PSubType: <b>CCT</b></td>	
+					</tr>
+									
+					<tr>
+						<td colspan="6">Style: <b>Multi Floor Unit</b></td>	
+					</tr>
+				</table>
+		
+	    		
+	    		<div class="clear"></div>
+
+				<!-- Remarks Container -->		
+				<div class="cols cols100 ">
+					<div class="col ">
+						<!-- Directions Container -->
+						
+							<div class="wp100 fieldPad l_float">
+								Directions: <b>Broad to Colfax Ave. For GPS Use 400 Colfax Ave </b>
+							</div>
+						
+						
+						
+					</div>
+				</div>
+				<!-- End Remarks Container -->	
+				<div class="clear"></div>
+
+				<!-- Interior Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>INTERIOR</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Applncs:</div>
+						<div class="bv l_float wp80 fieldPad " >CODetect, Dishwasher, Dryer              , Kitchen Exhaust Fan, Microwave Oven, Self Cleaning Oven, Refrigerator, Range/Oven-Gas, Washer</div>
+						
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Bsmnt:</div>
+						<div class="bv l_float wp80 fieldPad ">No&nbsp;/&nbsp;</div>
+					
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">Dine:</div>
+						<div class="bv l_float wp80 fieldPad ">Formal Dining Room</div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad phide">Exclu:</div>
+						<div class="bv l_float wp80 fieldPad phide"></div>
+					
+						<div class="clear"></div>								
+						<div class="bl l_float wd55 fieldPad ">FirePl:</div>
+						<div class="bv l_float wp80 fieldPad ">1&nbsp;/&nbsp;Gas Fireplace, Living Room</div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">Floor:</div>
+						<div class="bv l_float wp80 fieldPad ">Carpeting, Ceramic Tile, Wood</div>
+					</div>
+					
+					<div class="col">
+						<div class="clear"></div>								
+						<div class="bl l_float wp99 fieldPad phide">Handicap Modified: <font class="bv"></font></div>
+						
+						<div class="clear"></div>					
+						<div class="bl l_float wd55 fieldPad ">IntFeat:</div>
+						<div class="bv l_float wp80 fieldPad ">Blinds, CODetect, Cathedral Ceiling, High Ceilings, Intercom, Smoke Detector, Walk-In Closet</div>
+					
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">Kitch:</div>
+						<div class="bv l_float wp80 fieldPad ">Not Eat-In Kitchen, Separate Dining Area</div>
+											
+						<div class="clear"></div>	
+						<div class="bl l_float wd55 fieldPad ">MastBr:</div>
+						<div class="bv l_float wp80 fieldPad ">Full Bath, Sitting Room, Walk-In Closet</div>
+								
+						<div class="clear"></div>				
+						<div class="bl l_float wd55 fieldPad ">MstBath:</div>
+						<div class="bv l_float wp80 fieldPad " >Jetted Tub, Stall Shower</div>
+	
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">P-Use:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+						
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad ">Suite:</div>
+						<div class="bv l_float  wp80 fieldPad ">No/</div>
+							
+						
+					</div>
+				</div>
+				<!-- Exterior Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>EXTERIOR / OTHER FEATURES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="cols cols50">
+					 <div class="col">
+					 	
+						
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Amnt:</div>
+						<div class="bv l_float  wp80 fieldPad ">Billiards Room, Club House, Exercise Room, Kitchen Facilities, Sauna, Storage</div>
+	
+							
+
+						<div class="clear"></div>			
+						<div class="bl l_float  wd55 fieldPad ">Drive:</div>
+						<div class="bv l_float  wp80 fieldPad ">&nbsp;/&nbsp;Additional Parking, Common</div>
+
+							
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Exterior:</div>
+						<div class="bv l_float  wp80 fieldPad ">Composition Siding, Stucco</div>
+	
+							
+		
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad phide">ExtFeat:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+		
+
+					</div>
+					
+					<div class="col">
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Garage:</div>
+						<div class="bv l_float  wp80 fieldPad ">1&nbsp;/&nbsp; Attached Garage</div>
+				
+						<div class="clear"></div>								
+						<div class="bl l_float  wd55 fieldPad phide">LotDesc:</div>
+						<div class="bv l_float  wp80 fieldPad phide"></div>
+
+						<div class="clear"></div>				
+						<div class="bl l_float  wd55 fieldPad ">Pool:</div>
+						<div class="bv l_float  wp80 fieldPad ">No/Association Pool</div>
+
+						<div class="clear"></div>
+						<div class="bl l_float  wd55 fieldPad ">Roof:</div>
+						<div class="bv l_float  wp80 fieldPad ">Asphalt Shingle</div>
+
+					</div>
+				</div>
+				
+				
+				<!-- End Interior Exterior Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Room Dimensions Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>ROOMS</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="cols cols19 ">
+
+					<div class="col">			
+						<div class="wd45 bl l_float fieldPad">LivRm:</div>
+						<div class="wp65 bv l_float fieldPad">17x18&nbsp;/&nbsp;</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd45 bl l_float fieldPad">DinRm:</div>
+						<div class="wp65 bv l_float fieldPad">14x15&nbsp;/&nbsp;</div>
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Kitch:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+
+					</div>
+
+					<div class="col">	
+						<div class="wd35 bl l_float fieldPad">Den:</div>
+						<div class="wp65 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+	
+					</div>
+	
+					<div class="col">	
+						<div class="wd50 bl l_float fieldPad">FamRm:</div>
+						<div class="wp50 bv l_float fieldPad">&nbsp;/&nbsp;</div>
+					</div>
+			
+				</div>
+
+				<div class="clear"></div>
+				
+				
+				<div class="cols cols19 ">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed1:</div>
+						<div class="wp65 bv l_float fieldPad ">13x14&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Bed2:</div>
+						<div class="wp65 bv l_float fieldPad ">12x19&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed3:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+					<div class="col">
+						<div class="wd35 bl l_float fieldPad phide">Bed4:</div>
+						<div class="wp65 bv l_float fieldPad phide">&nbsp;/&nbsp;</div>
+					</div>
+				</div>
+								
+				<div class="clear"></div>		
+						
+				<div class="cols cols100 ">
+					<div class="col">
+				
+						<div class="wp25 l_float fieldPad"><font class="bl"> :</font> <font class="bv">/</font></div>
+		
+
+						<div class="wp25 l_float fieldPad"><font class="bl">Loft :</font> <font class="bv">15x21/</font></div>
+					
+					
+						<div class="wp25 l_float fieldPad"><font class="bl">: </font> <font class="bv">/</font></div>
+					
+			
+						<div class="wp24 l_float fieldPad"><font class="bl">: </font>  <font class="bv">/</font></div>
+						
+					</div>
+				</div>
+						
+				<div class="cols cols100 ">
+				
+					<div class="col ">
+						<div class="wd45 bl l_float fieldPad phide">LevelB:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">LevelG:</div>
+						<div class="wp93 bv l_float fieldPad phide"></div>
+					</div>
+	
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Level1:</div>
+						<div class="wp93 bv l_float fieldPad ">2 Bedrooms, Bath Main, Bath(s) Other, Dining Room, Kitchen, Laundry Room, Living Room, Entrance Vestibule</div>
+					</div>
+
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad ">Level2:</div>
+						<div class="wp93 bv l_float fieldPad ">Attic, Loft</div>
+					</div>
+				
+				</div>
+				
+				<div class="cols cols6040">
+					<div class="col">
+						<div class="wd45 bl l_float fieldPad phide">Level3:</div>
+						<div class="wp83 bv l_float fieldPad phide"></div>
+					</div>
+					<div class="col1">
+						<div class="wd45 bl l_float fieldPad phide">OthLev:</div>
+						<div class="wp70 bv l_float fieldPad phide"></div>
+					</div>
+				</div>
+
+				<!-- End Room Dimensions Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Utilities Container -->
+				<div class="cols cols100 ">
+					<div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>UTILITIES</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols">
+					<div class="col">
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Heat:</div>
+						<div class="wp86 bv l_float fieldPad ">1 Unit, Forced Hot Air</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Cool:</div>
+						<div class="wp86 bv l_float fieldPad ">1 Unit</div>
+					
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Fuel:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas-Natural</div>
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Service:</div>
+						<div class="wp86 bv l_float fieldPad ">Cable TV Available , Fiber Optic Available , Garbage Included</div>	
+
+					</div>
+					<div class="col">
+
+						<div class="clear"></div>						
+						<div class="wd45 bl l_float fieldPad ">Sewer:</div>
+						<div class="wp86 bv l_float fieldPad ">Association</div>
+
+						<div class="clear"></div>							
+						<div class="wd45 bl l_float fieldPad ">Utilities:</div>
+						<div class="wp86 bv l_float fieldPad ">All Underground</div>
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">Water:</div>
+						<div class="wp86 bv l_float fieldPad ">Association</div>	
+
+						<div class="clear"></div>	
+						<div class="wd45 bl l_float fieldPad ">WtrHt:</div>
+						<div class="wp86 bv l_float fieldPad ">Gas</div>	
+
+					</div>
+				
+				</div>
+				<!-- End Utilities Container -->
+				<div class="clear1px">&nbsp;</div>
+				<!-- Financial Container -->
+				<div class="cols cols100">
+					 <div class="col">
+						<div class="wp100 titleBars gradientBox">
+							<div>FINANCIAL INFORMATION / TAX INFORMATION</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear1px">&nbsp;</div>
+				<div class="cols cols100">
+					 <div class="col">
+				
+						<div class="wd50 bl l_float fieldPad">Fee:</div>
+						<div class="wp17 bv l_float fieldPad">$400&nbsp;/&nbsp;Monthly</div>
+			
+						<div class="wd60 bl l_float fieldPad ">FarmAsm:</div>
+						<div class="wp10 bv l_float fieldPad ">No</div>
+						
+						<div class="wd60 bl l_float fieldPad ">HmWrnty:</div>
+						<div class="wp4  bv l_float fieldPad ">No</div>
+					
+							
+						<div class="wp8 bv r_float fieldPad">$80,000</div>
+						<div class="wd55 bl r_float fieldPad">LndAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">$10,531&nbsp;/&nbsp;2012
+						</div>
+						<div class="wd40 bl r_float fieldPad">Taxes:</div>
+						
+						<div class="clear"></div>	
+						
+						<div class="wd50 bl l_float fieldPad">AppFee:</div>
+						<div class="wp17 bv l_float fieldPad">$670</div>
+						<div class="wd60 bl l_float fieldPad">OTP:</div>
+						<div class="wp10 bv l_float fieldPad">Condominium</div>
+						
+											
+						
+						<div class="wp8 bv r_float fieldPad">$134,800</div>
+						<div class="wd55 bl r_float fieldPad">BldAsmt:</div>
+
+						<div class="wp12 bv r_float fieldPad">4.903&nbsp;/&nbsp;2012</div>
+						<div class="wd40 bl r_float fieldPad">TaxRt:</div>
+												
+						<div class="clear"></div>
+						
+						<div class="wd50 bl l_float fieldPad">Other:</div>
+						<div class="wp17 bv l_float fieldPad">$&nbsp;/&nbsp;</div>				
+						<div class="wd60 bl l_float fieldPad">Easement:</div>
+						<div class="wp30 bv l_float fieldPad">Unknown&nbsp;/&nbsp;</div>
+				
+						
+						<div class="wp8 bv r_float fieldPad">$214,800</div>
+						<div class="wd55 bl r_float fieldPad">TotAsmt:</div>
+						
+
+					</div>
+				</div> 
+			
+				<!-- End Financial Container -->
+			</div><!-- End Report -->
+		</td>
+		
+	</tr>
+</table> <!-- End Container -->
+	
+	
+	
+
+		
+<table border="0" class="gsmlsfooterclass" cellspacing="0" cellpadding="0" id="table34" style="border:none;" >
+			<tr style="border:none;">
+				<td class="footpadleft" align="left" style="border:none;">Copyright, Garden State MLS, L.L.C.</td>
+				<td align="center" style="border:none;">
+				<font color="#FF0000"><i>**Info. deemed RELIABLE but not GUARANTEED - ALL Room Sizes are Approx.**</i></font></td>
+				
+					<td  class="footpadright"  align="right" style="border:none;"><b>REGINA SHEERAN</b></td>
+				
+			</tr>
+</table>
+
+<script>
+function searchreportforagent(selsysid){
+
+	membersessionId = document.forms[0].membersessionId.value;
+window.open("/mlsreports/runProfileReport.do?method=getAgentProfileReport&selectedPubId="+selsysid+"&membersessionId="+membersessionId);
+
+}
+</script>  
+
+
+
+
+<div id="innerframe">
+	<iframe name="printfrm" id="pn"  src="/public/common/printblankl.jsp" style="width:0px; height:0px; border: 0px"
+/>
+</div>
+
+
+<!-- -original jsp -->
+<!-- -original jsp -->
+
+
+</form>
+</body>
+</html>
