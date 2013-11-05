@@ -54,7 +54,7 @@ Handout list price:   473,000
 Upgrades:
  - Top floor			     15,000
  - Unit upgrades		   38,000
- - 
+
 **Stated market value:  526,000**
 
 Less incentives:      -55,000
